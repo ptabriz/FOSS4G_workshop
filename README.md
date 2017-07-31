@@ -125,7 +125,7 @@ By pressing the __+__ icon you can start a new file and click on __Run Script__ 
 ![Blender Viewport](img/text_editor.png) <br> Text Editor|
 |:---:|
 
-`example 2.` Batch processing simple object operations using text editor
+ **<span style="background-color: #EBF5C8"> Example 2.</span>** Batch processing simple object operations using text editor
 
 * Create a matrix of Cubes with varied size and location.
   * In the text editor click on the __+__ icon to create a new textfile
