@@ -67,9 +67,9 @@ Now note the toolbar on the left side of the region which is called __Tool shelf
 
 Header's __View menu__ allow you to select a specific viewpoint such as top, left or different perspectives. Also notice that each of these commands have a keyboard shortcut associated with them. For example you can push `numpad 3` (if you have a full keyboard) to switch to top view.
 
-__add menu__ Provides a list of different objects types that can be added to a scene
+__Add menu__ Provides a list of different objects types that can be added to a scene
 
-__Interaction mode__ allows you to toggle between the __Object mode__ and __Edit mode__. Edit mode allows you to access more low-level structures of your object, like faces, and vertices. In the examples that we complete in this tutorial, we will use some of these options to refine the surface model. It is important to get familiar with the 3 core elements, __faces*, __edges__ and __vertex__. You can select these elements by clicking on their corresponding icons.
+__Interaction mode__ allows you to toggle between the __Object mode__ and __Edit mode__. Edit mode allows you to access more low-level structures of your object, like faces, and vertices. In the examples that we complete in this tutorial, we will use some of these options to refine the surface model. It is important to get familiar with the 3 core elements, __Faces__, __Edges__ and __Vertex__. You can select these elements by clicking on their corresponding icons.
 
 On the right side of the interaction mode, is the viewport __Shading mode__ which you can use to choose the visualization and viewport rendering method. Default is the __Solid mode__ that shows objects with solid faces, but without textures and shading. The __Material mode__ shows the object with textures and is suitable for having an idea how 3D objects may look like with materials. The __Rendering mode__, enables real-time rendering, which computes the near-to-final product on-the-fly as you interact with the object.
 #### Basic object selection and interaction
@@ -79,17 +79,17 @@ __Objects__ are basically everything that you see in the 3D view. They include 3
 
 
 [Learn more about 3D view](https://docs.blender.org/manual/en/dev/editors/3dview/introduction.html#tool-shelf)
-
+___________________
 ### Outliner
 As its name suggests, outliner lists and organizes the scene objects. From there you can set the hierarchy, visibility of the 3D objects or lock them if you need. You can also select and activate objects by clicking on their name in the list.
-
+___________________
 ### Python console
 The Python console is a very useful editor for testing and executing short commands, which can then integrated in larger workflows. The Blender modelling and gaming modules are already loaded in python console so you can you can test your code snippets without extra effort of calling the modules.
 
 ![Blender Viewport](img/python_console.png) <br> Python console (retrieved from Blender manual)|
 |:---:|
 
-`example 1.`Simple object operation using python console.
+__`example 1.`__ Simple object operation using python console.
 
 * Call *Cube* object and print its location  
   * Copy and paste the individual command lines in the console and press enter  
@@ -117,7 +117,7 @@ bpy.ops.object.delete()
 ``` python
 bpy.ops.mesh.primitive_cube_add(radius=2, location = (0,0,0))
 ```
-
+___________________
 ### Text Editor
 Text editor allows you to edit your python script and run it inside Blender.
 By pressing the __+__ icon you can start a new file and click on __Run Script__ to execute your code. You need to call modelling and gaming modules in text editor.
@@ -158,8 +158,7 @@ bpy.ops.mesh.primitive_monkey_add(location=(0, 0, 0), radius = 3)
 bpy.ops.mesh.primitive_plane_add(location=(0, 0, -3), radius = 10)
 ```
 
-
-
+___________________
 ### Properties editor
 
 __Properties editor__ allows you to modify the properties of the scene, rendering setting, transforming objects or changing their material or texture properties. The components that we will work with in the following examples are *Object, Material and Texture properties*.
@@ -172,7 +171,7 @@ Note: Properties editor's interface is dynamically changing according to the sel
 
 __Object properties__ tab allows you to transform the location, orientation and scale of the object, along with their display properties. You can use numeric input for transformation parameters.
 
-`example 3.` Basic object transformation using properties modifier
+__`Example 3.`__ Basic object transformation using properties modifier
 
 * Make sure that *Suzanne* object is selected. It should be highlighted in __outliner__  
 * Go to __Properties editor__ > __Object tab__ > expand the __Transform__ section
@@ -184,7 +183,7 @@ __Materials__ allows you to assign or change an object’s material. You can add
 **Shading** (or coloring) allows you to adjust the base color (as modified by the diffusion and specular reflection phenomenon) and the light intensity. **Textures** . You can also assign texture to the materials. You can either select from preset textures already available in scene, or load a new one from hard drive.
 
 
-`example 4.` Assigning simple Shaders and Textures
+__`Example 4.`__ Assigning simple Shaders and Textures
 
 * Shaders
   * From outlier select object make sure that *Suzanne* object is selected
@@ -207,11 +206,11 @@ __Materials__ allows you to assign or change an object’s material. You can add
 |![Blender Viewport](img/Materials_2.jpg) Gradient texture &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  Voronoi texture &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Diffuse Shader &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Mix Shader|
 |:---:|
 
-
+___________________
 ### Node Editor (material)
 In addition to creating materials as just described using all the settings on all the materials panels, in Blender you can create more sophisticated materials by routing basic materials through a set of nodes. Each node performs some operation on the material, changing how it will appear when applied to the mesh, and passes it on to the next node. In this way, very complex material appearances can be achieved.
 
-`example 5.` Setup a Mix shader using node editor.
+__`Example 5.`__ Setup a Mix shader using node editor.
 
 * Right click on the Monkey object (*Suzanne*) to select it
 * Switch the python console editor (bottom left area) to __Node editor__ (figure below, left).
