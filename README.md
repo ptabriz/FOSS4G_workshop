@@ -43,24 +43,40 @@ Blender is an open-source 3D modelling, rendering and game engine software. You 
 [A sample geospatial model in Sketchfab](https://sketchfab.com/models/298dfaf54e4447459275493e7b2adf96)<br>
 
 
-## Basics of the Blender interface
+## Basics components of the Blender interface
 
 Blender has numerous components and features that, thanks to it open-source capabilities, are growing every day. Covering all aspects of the software itself require several lessons. The purpose of this section is to provide a brief introduction to Blender's graphical user interface and some of its features that are essential for working with geospatial data, and will be used throughout this tutorial.
 
 |![Blender Viewport](img/Blender_interface.JPG)Blender interface|
 |:---:|
 
-### Editors
-
 * Browse the workshop data folder, locate and open *interface_introduction.blend*
 
-Blender has a number of editors to view and modify various aspect of data. You can set each of the viewports to a specific editor and you can do that by clicking on the *editor type* selector (box icon next to *View*, see image below). This allows you to reorganize and customize the interface based on your project needs and preferences. Also, you can add editors by dragging the triangular shaped stripes at corners of each viewport. Below we will review some of them that are most relevant to handling geospatial data.
+### Areas
+The application window is always a rectangle on your desktop. It is divided up into a number of re-sizable areas. An area contains the workspace for a particular type of editor, like a 3D View Editor, or an Outliner.
+
+### Editors
+
+Blender provides a number of different environments ,so called editors, for displaying and modifying different aspects of data. Imagine editors as full-fledge software specialized for a specific tasks, like changing data properties, image editing, video editing, animation design, game design, and etc. That being said, each editor comes with variety of menus, options and parameters. However, they share some common interface features that knowing them may help you find yourself easier around each editor.
+
+First common feature is the __Editor Type selector__ (figure below), the first button at the left side of a header that allows you to change the editor in that area. Every area in Blender may contain any type of editor and it is also possible to open the same type multiple times. 
+
+Second common feature is  __Header__, also called __Ribbon__ that contain menus and commonly used tools. A has a small horizontal strip shape with a lighter gray background, which sits either at the top or bottom of the area.
+
+There are also __Tool shelves__ or __Toolbars__ that are by default located on the left side of the editor. You can hide and unhide toolbars using keyboard shortcut “T”.
+
+
+Below we will review some of them that are most relevant to handling geospatial data.
+
+![Blender Viewport](img/interface_parts.JPG) <p> __Above:__ Editor type selector (left), A Toolbar with tabs (middle), Toolbar Panels (right)
+__Below:__ A Header with tabs
+
+
 [learn more about editors](https://docs.blender.org/manual/en/dev/editors/)
 ### 3D view
 The __3D View__ is the visual interface with the 3D data and scene with numerous functionalities for modeling, animation, texture painting, etc. Unlike the 2D environment of GIS software, where you can only navigate in x and y directions, 3D viewport allows full control over our viewing angle, depth, size, etc. You can press and hold down mouse scroll (or middle click) button to change the viewing angle (or orbiting around), shift and drag to pan, and roll to zoom back and forth.
 
 Now note the toolbar on the left side of the region which is called __Tool shelf__ and it has a variety of the tools for 3D editing. Newly installed addons also appear in this toolbar. Now notice the bottom toolbar- so called __Header__. Header includes menus for adding, editing objects as well as viewing and shading options.
-
 
 |![Blender Viewport](img/editors_3dview_header.png) 3D view header (retrieved from Blender manual)|
 |:---:|
@@ -89,7 +105,7 @@ The Python console is a very useful editor for testing and executing short comma
 ![Blender Viewport](img/python_console.png) <br> Python console (retrieved from Blender manual)|
 |:---:|
 
-__`example 1.`__ Simple object operation using python console.
+__`Example 1.`__ Simple object operation using python console.
 
 * Call *Cube* object and print its location  
   * Copy and paste the individual command lines in the console and press enter  
@@ -125,7 +141,7 @@ By pressing the __+__ icon you can start a new file and click on __Run Script__ 
 ![Blender Viewport](img/text_editor.png) <br> Text Editor|
 |:---:|
 
- **<span style="background-color: #EBF5C8"> Example 2.</span>** Batch processing simple object operations using text editor
+ __`Example 2.`__  Batch processing simple object operations using text editor
 
 * Create a matrix of Cubes with varied size and location.
   * In the text editor click on the __+__ icon to create a new textfile
