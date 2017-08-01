@@ -2,9 +2,8 @@
 
 <img src="img/cgaBlack.png" height="60" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/Blender_logo.png" height="60">
 
-
+<br>
 # 3D visualization of geospatial data using Blender
-
 This is material for the summer geospatial studio held at Center for Geospatial Analytics, in Raleigh, NC, 2 August, 2017.
 
 Prepared by : [Payam Tabrizian](https://github.com/ptabriz) <br>
@@ -17,6 +16,7 @@ ___________________
 ### Part 1. Basics of Blender interface and functionalities
 [I. Intro](#i-what-is-blender-and-why-using-Blender?)<br>
 [II. Basic components of blender interface](#ii-basic-components-of-the-blender-interface)<br>
+[III. Editors](#iii-editors)<br>
 
 ### Part 2. Processing, shading and rendering geospatial data
 [I. Setting up the scene](#i-setting-up-the-scene)<br>
@@ -29,7 +29,7 @@ ___________________
 ___________________
 ## Abstract
 
-What if your geospatial data and simulations like flooding, fire-spread and viewshed comupations are converted on-the-fly into realistic, interactive and immersive 3D worlds, without the need to deal with overly complicated or proprietary 3D modelling software? In this hands-on workshop we will explore how to automate importing and processing of various types of geospatial data (e.g., rasters, vectors) using Blender, an open-source 3D modelling and game engine software. We will start with a brief and focused introduction into Blender graphical user interface (GUI), Python API, as well as the GIS addon. Once we import our GIS data into Blender, we will go over the techniques (both with GUI and command line) to increase the realism of our 3D world through applying textures, shading, and lighting.
+What if your geospatial data and simulations like flooding, fire-spread and viewshed are converted to realistic, interactive and immersive 3D worlds, without the need to deal with overly complicated or proprietary 3D modelling software ? In this hands-on workshop we will explore how to automate importing and processing of various types of geospatial data (e.g., rasters, vectors) using Blender, an open-source 3D modelling and game engine software. We will start with a brief and focused introduction into Blender graphical user interface (GUI), Python API, as well as the GIS addon. Once we import our GIS data into Blender, we will go over the techniques (both with GUI and command line) to increase the realism of our 3D world through applying textures, shading, and lighting.
 
 ___________________
 ## I. What is Blender and why using Blender?
@@ -41,57 +41,57 @@ Blender is an open-source 3D modelling, rendering and game engine software. You 
 
 ## II. Basic components of the Blender interface
 
-Blender has numerous components and features that, thanks to it open-source capabilities, are growing every day. Covering all aspects of the software itself require several lessons. The purpose of this section is to provide a brief introduction to Blender's graphical user interface and some of its features that are essential for working with geospatial data, and will be used throughout this tutorial.
+
+
+Blender has numerous components and features that, thanks to it open-source capabilities, are growing every day. Covering all aspects of the software itself require several lessons. The purpose of this section is to provide a brief introduction to Blender's graphical user interface and some of its features that are essential for working with geospatial data, and will be used throughout this tutorial. We will specifically introduce the following components: __Areas, Editors, Tabs, Headers, Panels__
+
+* Browse the workshop data folder, locate and open *interface_introduction.blend*
 
 |![Blender Viewport](img/Blender_interface.JPG)Blender interface|
 |:---:|
 
-* Browse the workshop data folder, locate and open *interface_introduction.blend*
+Blender's application window can be flexibly arranged and divided up into a number of __Areas__. An area contains the workspace for a particular type of editor, like a *3D View Editor*, or an *Outliner*.  In figure above you can see the application window is divided into five areas, each assigned to an editor.  
 
-### Areas
-The application window is always a rectangle on your desktop. It is divided up into a number of re-sizable areas. An area contains the workspace for a particular type of editor, like a 3D View Editor, or an Outliner.
+__Editors__ are responsible for displaying and modifying different aspects of data. Imagine editors as full-fledge software specialized for a specific tasks, like changing data properties, image editing, video editing, animation design, game design, and etc. You can assign an area to a specific editor using __Editor Type selector__ , the first button at the left side of a header (figure below, left). Every area in Blender may contain any type of editor and it is also possible to open the same type multiple times.
 
-### Editors
+__Tabs__ are overlapping sections in the user-interface. The Tabs header can be vertical (Tool Shelf) or horizontal (Properties Editor, User Preferences).
 
-Blender provides a number of different environments ,so called editors, for displaying and modifying different aspects of data. Imagine editors as full-fledge software specialized for a specific tasks, like changing data properties, image editing, video editing, animation design, game design, and etc. That being said, each editor comes with variety of menus, options and parameters. However, they share some common interface features that knowing them may help you find yourself easier around each editor.
+Another common feature is the __Header__, that contain menus and commonly used tools specific to each editor. It has a small horizontal strip shape with a lighter gray background, which sits either at the top or bottom of the area.
 
-First common feature is the __Editor Type selector__ (figure below), the first button at the left side of a header that allows you to change the editor in that area. Every area in Blender may contain any type of editor and it is also possible to open the same type multiple times.
-
-Second common feature is  __Header__, also called __Ribbon__ that contain menus and commonly used tools. A has a small horizontal strip shape with a lighter gray background, which sits either at the top or bottom of the area.
-
-There are also __Tool shelves__ or __Toolbars__ that are by default located on the left side of the editor. You can hide and unhide toolbars using keyboard shortcut “T”.
-
-
-Below we will review some of them that are most relevant to handling geospatial data.
+Finally, the smallest organizational unit in the user interface is a __Panel__. You can usually collapse panels to hide their contents. They are used in the Properties Editor, but also for example in the Tool Shelf and the Properties region. In the image below on the right you can see three panels one of them is expanded and the rest are collapsed.
 
 ![Blender Viewport](img/interface_parts.JPG) <p> __Above:__ Editor type selector (left), A Toolbar with tabs (middle), Toolbar Panels (right)
 __Below:__ A Header with tabs
 
+### III. Editors
+Now that you have some general ideas about the interface, in following we will review some of the commonly used editors.
 
-[learn more about editors](https://docs.blender.org/manual/en/dev/editors/)
 ### 3D view
 The __3D View__ is the visual interface with the 3D data and scene with numerous functionalities for modeling, animation, texture painting, etc. Unlike the 2D environment of GIS software, where you can only navigate in x and y directions, 3D viewport allows full control over our viewing angle, depth, size, etc. You can press and hold down mouse scroll (or middle click) button to change the viewing angle (or orbiting around), shift and drag to pan, and roll to zoom back and forth.
 
-Now note the toolbar on the left side of the region which is called __Tool shelf__ and it has a variety of the tools for 3D editing. Newly installed addons also appear in this toolbar. Now notice the bottom toolbar- so called __Header__. Header includes menus for adding, editing objects as well as viewing and shading options.
+Now note the panel on the left side of the region which is called __Tool shelf__ and it has a variety of the tools for 3D editing. Newly installed addons also appear in this toolbar. Now notice the bottom __Header__. It includes menus for adding, editing objects as well as viewing and shading options.
 
 |![Blender Viewport](img/editors_3dview_header.png) 3D view header (retrieved from Blender manual)|
 |:---:|
 
 Header's __View menu__ allow you to select a specific viewpoint such as top, left or different perspectives. Also notice that each of these commands have a keyboard shortcut associated with them. For example you can push `numpad 3` (if you have a full keyboard) to switch to top view.
 
-__Add menu__ Provides a list of different objects types that can be added to a scene
+__Add menu__ provides a list of different types of 2D and 3D object that can be added to a scene
 
 __Interaction mode__ allows you to toggle between the __Object mode__ and __Edit mode__. Edit mode allows you to access more low-level structures of your object, like faces, and vertices. In the examples that we complete in this tutorial, we will use some of these options to refine the surface model. It is important to get familiar with the 3 core elements, __Faces__, __Edges__ and __Vertex__. You can select these elements by clicking on their corresponding icons.
 
 On the right side of the interaction mode, is the viewport __Shading mode__ which you can use to choose the visualization and viewport rendering method. Default is the __Solid mode__ that shows objects with solid faces, but without textures and shading. The __Material mode__ shows the object with textures and is suitable for having an idea how 3D objects may look like with materials. The __Rendering mode__, enables real-time rendering, which computes the near-to-final product on-the-fly as you interact with the object.
+
 #### Basic object selection and interaction
 
-__Objects__ are basically everything that you see in the 3D view. They include 3D objects, lights and camera. You can select any object in the scene using the mouse right-click. Selected objects are highlighted in orange so you can easily distinguish them. Use the 3 axes (i.e., handles) to move the object in your preferred direction. To select multiple objects, press and hold `control` key and right click on objects to add to your selection. You can rotate objects by pressing `R` keyboard button, or scale objects using `S` key. Note that when you are transforming an object, a numeric output on the left bottom of the 3D viewport will give you more precise feedback on how much you moved, rotated or scaled an object. You can delete the object by selecting it, pressing `delete` key and selecting ok.
+__Objects__ are basically everything that you see in the 3D view. They include 3D objects, lights and cameras. You can select any object in the scene using the mouse right-click. Selected objects are highlighted in orange so you can easily distinguish them. Use the 3 axes (i.e., handles) to move the object in your preferred direction. To select multiple objects, press and hold `control` key and right click on objects to add to your selection. You can rotate objects by pressing `R` keyboard button, or scale objects using `S` key. Note that when you are transforming an object, a numeric output on the left bottom of the 3D viewport will give you more precise feedback on how much you moved, rotated or scaled an object. You can delete the object by selecting it, pressing `delete` key and selecting ok.
 
 [Learn more about 3D view](https://docs.blender.org/manual/en/dev/editors/3dview/introduction.html#tool-shelf)
 ___________________
 ### Outliner
-As its name suggests, outliner lists and organizes the scene objects. From there you can set the hierarchy, visibility of the 3D objects or lock them if you need. You can also select and activate objects by clicking on their name in the list.
+As its name suggests, outliner lists and organizes the scene objects. From there you can set the hierarchy, visibility of the 3D objects or lock them if you need. You can also select and activate objects by clicking on their name in the list. Figure below shows **Outliner editor** that list three objects (Camera, Cube and Lamp). The Lamp object is selected.
+
+<img src="img/outliner.JPG" height="300"> <br>
 ___________________
 ### Python console
 The Python console is a very useful editor for testing and executing short commands, which can then integrated in larger workflows. The Blender modelling and gaming modules are already loaded in python console so you can you can test your code snippets without extra effort of calling the modules.
@@ -184,14 +184,14 @@ __Object properties__ tab allows you to transform the location, orientation and 
 __`Example 3.`__ Basic object transformation using properties modifier
 
 * Make sure that *Suzanne* object is selected. It should be highlighted in __outliner__  
-* Go to __Properties editor__ > __Object tab__ > expand the __Transform__ section
+* Go to __Properties editor__ > __Object tab__ > expand the __Transform__ panel
 * Type *3, 2, 4* for *X, Y, Z* parameters, respectively.
 * Change *Rotation* and *Scale* parameters to see how they affect the object
 
 
-__Materials__ allows you to assign or change an object’s material. You can add and remove material, or use material browser to assign previously created materials to the object. Some very basic material parameters include *Diffuse and Specular*. You can adjust the diffuse parameters to change the color and shading of the material and with Specular adjust the glossiness of the material. Also, play with the shading and transparency parameters to see how it impacts your object. In this tutorial we briefly introduce two basic components of Materials. namely __Shaders__ and __Textures__.  
-**Shading** (or coloring) allows you to adjust the base color (as modified by the diffusion and specular reflection phenomenon) and the light intensity. **Textures** . You can also assign texture to the materials. You can either select from preset textures already available in scene, or load a new one from hard drive.
+__Materials__ tab allows you to assign or change an object’s material. You can add and remove material, or use material browser to assign previously created materials to the object. Some very basic material parameters include *Diffuse and Specular*. You can adjust the diffuse parameters to change the color and shading of the material and with Specular adjust the glossiness of the material. Also, play with the shading and transparency parameters to see how it impacts your object. In this tutorial we briefly introduce two basic components of Materials. namely __Shaders__ and __Textures__.  
 
+**Shading** (or coloring) allows you to adjust the base color (as modified by the diffusion and specular reflection phenomenon) and the light intensity. **Textures** . You can also assign texture to the materials. You can either select from preset textures already available in scene, or load a new one from hard drive.
 
 __`Example 4.`__ Assigning simple Shaders and Textures
 
@@ -199,9 +199,9 @@ __`Example 4.`__ Assigning simple Shaders and Textures
   * From outlier select object make sure that *Suzanne* object is selected
   * Go to __properties editor__ > __object tab__ > click on the __+ New__ button to create a new material
   * Double click on the material name (e.g., *Material.001*) and change it to *Mymat*
-  * Expand the preview section to see a live preview of the material as you are changing it
+  * Expand the preview panel to see a live preview of the material as you are changing it
   * Change the color parameter to red
-  * Go to 3D editor bottom __ribbon__ > __Viewport shading__ > __rendered__ to see the object render in realtime
+  * Go to 3D editor bottom __Header__ > __Viewport shading__ > __rendered__ to see the object render in realtime
   * Change the color to yellow
   * Click on the __Diffuse BSDF__ field in front of the surface parameter and select *Glass BSDF*
   * Now try  *Emission BSDF* and *Glossy BSDF* shaders while the viewport shader is on *Rendered* mode to see the effect on rendering. Your material preview and scene rendering should look like the figure shown below
@@ -211,7 +211,7 @@ __`Example 4.`__ Assigning simple Shaders and Textures
 
 * Textures
   * While the shader is still on “Glossy BSDF”, click on the radio button in front of the “Color” parameter. A widget with several columns will appear. From the texture column, select “Voronoi” to see how texture impact the rendering.
-  * Now try “Gradient” texture. Your material preview and scene rendering should look like the left two columns in thefigure below.
+  * Now try “Gradient” texture. Your material preview and scene rendering should look like the left two columns in the figure below.
 
 |![Blender Viewport](img/Materials_2.jpg) Gradient texture &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  Voronoi texture &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Diffuse Shader &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Mix Shader|
 |:---:|
@@ -220,38 +220,45 @@ ___________________
 ### Node Editor (material)
 In addition to creating materials as just described using all the settings on all the materials panels, in Blender you can create more sophisticated materials by routing basic materials through a set of nodes. Each node performs some operation on the material, changing how it will appear when applied to the mesh, and passes it on to the next node. In this way, very complex material appearances can be achieved.
 
-__`Example 5.`__ Setup a Mix shader using node editor.
+__`Example 5.`__ Setup a Mix Shader using node editor.
+In this example we mix a glossy shader with a diffuse shader to make a composite material.
 
 * Right click on the Monkey object (*Suzanne*) to select it
 * Switch the python console editor (bottom left area) to __Node editor__ (figure below, left).
 * In the node editor You will see the nodes we have already setup. The Glossy node shader’s output is connected to the surface input of the Material output.  
 We will now add two other shaders, a diffuse shader, and a mix shader.
-* From the Noder Editor’s bottom ribbon > __Add__ > __Shader__ > __Diffuse BSDF__
-* From the Noder Editor’s bottom ribbon >__Add__ > __Shader__ > __Mix shader__. You should be able to see both nodes have been added in to your node editor.
+* From the Noder Editor’s bottom Header > __Add__ > __Shader__ > __Diffuse BSDF__
+* From the Noder Editor’s bottom Header >__Add__ > __Shader__ > __Mix shader__. You should be able to see both nodes have been added in to your node editor.
 * Change the color value of the Diffuse node to *R: 0.075 G: 0.35 B: 0.50*
 * Disconnect the __Glossy BSDF__ input from the surface
 * Connect BSDF output of both Diffuse and Glossy shaders to the inputs on the left side of the Mix (Shader)
 * Connect Shader output (on the right side) to the Surface input of the Material output nodes (figure below, right).
 * With the Fac parameter, you can adjust the mixture level.
 * Your material should look like the right column of the above figure
-
+[learn more about nodes](https://docs.blender.org/manual/de/dev/render/cycles/nodes/index.html)
 
 ![Blender Viewport](img/Node_editor.PNG)|![Blender Viewport](img/anim_mixed.gif) Node design with mix shader|
 |:---:|:---:|
 
-[learn more about nodes](https://docs.blender.org/manual/de/dev/render/cycles/nodes/index.html)
-
-
 Other Complementary resources for learning blender interface
+
 [Blender manual](https://docs.blender.org/manual/en/dev/interface/index.html)
 [CG cookie](https://www.google.com/search?q=introduction+to+blender+interface&oq=introduction+to+blender+interface&aqs=chrome..69i57.5976j0j1&sourceid=chrome&ie=UTF)
-
+[learn more about editors](https://docs.blender.org/manual/en/dev/editors/)
 ----------
 ![Blender Viewport](img/example_1_intro.jpg)
 
 ## Part 2. Processing, shading and rendering geospatial data
 
-In this section we will learn how to setup blender GIS addon, georeferences and importing raster and vector data and assigning viewshed and orthophoto maps as textures.
+In this section we will learn how to setup blender GIS addon, georeferences and importing raster and vector data and assigning simulations and orthophoto maps as textures. We will proceed with the instructions using a simple viewshed assignment. The aim is to visualize and compare viewsheds simulation computed for 4 different locations across a site. The general workflow is as following.
+
+I) Preparing the scene and lighting
+II) Georeferencing the scene
+III) Importing and processing the digital surface raster
+IV) Importing and processing the viewpoint shapefile
+V) Draping the viewshed map and orthophoto on the surface model
+
+*Note:* Viewshed is a raster map showing a surface's visible areas from a given locations.  
 
 There are two ways to complete the example; Scripting method (using blender's Python editor) and GUI (graphical user interface) method. For each step, the GUI procedure is listed as bullet points. Below that you can find the code snippet if you would like to follow the Scripting procedure. To execute the code snippet open a new text file in __Text Editor__ and for each step directly copy-paste the code snippet into the editor and click on __Run Script__ to execute the code.
 
@@ -260,7 +267,7 @@ There are two ways to complete the example; Scripting method (using blender's Py
 |GUI   |1-2 hours      | Complex  |
 |Python editor    | 10-15 minutes  |Easy|
 
-NOTE: For enhanced learning complete the example with both methods but do not mix and match. Try to follow one method from the beginning to the end.
+*Note* For better learning complete the example with both methods but do not mix and match. Try to follow one method from the beginning to the end.
 
 ### I. Setting up the scene
 __`GUI`__
@@ -268,11 +275,11 @@ __`GUI`__
 * Select the default __Cube__ object in 3D viewport and delete it (right-click on the object > press delete > ok )
 * Set __render engine__ to "Cycles". You can find it in the top header, the default is "Blender Render"
 * To increase the _Lamp_ elevation and change the Lamp type to "Sun" for appropriate lighting:
-    * Left click on the __Lamp__ object in __Ouliner__ (on the right side wih objects' list) to select it
-    * Go to __Properties editor__ > __Object__ (the orange cube icon) > __Transform__ section > in the __Location__ matrix, change the *Z* value to 1000 (see below figure if needed)
+    * Left click on the __Lamp__ object in __Outliner__ to select it
+    * Go to __Properties editor__ > __Object__ (the orange cube icon) > __Transform__ panel > in the __Location__ matrix, change the *Z* value to 1000 (see below figure if needed)
 * To change lamp type to Sun and increase the emission:
-    * In __Properties editor__ > __Lamp__ (two icons to the right of the __Object__ icon) > expand the __Lamp__ section > Change lamp type to *Sun*
-    * Expand the __Nodes__ section > Click on __Use Nodes__ to enable modifying Sun parameters.
+    * In __Properties editor__ > __Lamp__ (two icons to the right of the __Object__ icon) > expand the __Lamp__ panel > Change lamp type to *Sun*
+    * Expand the __Nodes__ panel > Click on __Use Nodes__ to enable modifying Sun parameters.
     * Set the __Strength__ parameter to 6.00
 
 __`Python editor`__
@@ -304,27 +311,30 @@ bpy.context.scene.render.engine = 'CYCLES'
 ### II. Georeferencing the Blender Scene
 
 #### Setting up Blender GIS addon
-* [Download](https://github.com/ptabriz/BlenderGIS) the customized version of BlenderGIS addon and  make sure that addon and required dependencies are properly installed
-* Go to __file__ >  __user preferences__ ( `Alt + Ctrl + U` ) > __Add-ons__  
-* In the search tab, on top left type "gis" and make sure that in the __Categories__ section __All__ is selected.
+* [Download](https://github.com/ptabriz/BlenderGIS) the BlenderGIS addon
+* Go to __file__ >  __user preferences__ ( `Alt + Ctrl + U` ) > __Add-ons__ > __Install from File__ (bottom of the window)
+* In the search tab, on top left type "gis" and make sure that in the __Categories__ panel __All__ is selected.
 * In the search results you should be able to see __3Dview: BlenderGIS__. Select to load the addon.
 * From the bottom of the preferences window click __Save User Settings__ so the addon is loaded next time you open blender
 
 #### Adding a new predefined coordinate reference system (CRS)
-Before setting up the coordinate reference system of the Blender scene and configuring the scene projection, you should know the Coordinate Reference System (CRS) and the Spatial Reference Identifier (SRID) of your project. In GRASS GIS, CRS information can be retrieved using  `v.info` or `r.info` functions . You can get the SRID from [http://epsg.io/](http://epsg.io/) or [spatial reference website ](http://spatialreference.org/) using your CRS. The example datasets in this exercise uses a NAD83(HARN)/North Carolina CRS (SSRID EPSG: 3358)   
+Before setting up the coordinate reference system of the Blender scene and configuring the scene projection, you should know the Coordinate Reference System (CRS) and the Spatial Reference Identifier (SRID) of your project. You can get the SRID from [http://epsg.io/](http://epsg.io/) or [spatial reference website ](http://spatialreference.org/) using your CRS. The example datasets in this exercise uses a NAD83(HARN)/North Carolina CRS (SSRID EPSG: 3358)   
 
-* In BlenderGIS add-on section (in preferences windows), select to expand the __3D View: BlenderGIS__  
-* In the preferences section find __Spatial Reference Systems__ and click on the __+ Add__ button
+* In BlenderGIS add-on panel (in preferences windows), select to expand the __3D View: BlenderGIS__  
+* In the preferences panel find __Spatial Reference Systems__ and click on the __+ Add__ button
 * In the add window put  "3358" for __definition__ and "NAD83(HARN)/North Carolina" for __Description__. Then select __Save to addon preferences__
 * Select __OK__ and close the User Preferences window
 
-[Learn more](https://github.com/domlysz/BlenderGIS/wiki/Gereferencing-management) about Georefencing management
 
+|![Blender Viewport](img/install_addon.gif) Installing addon and setting up Coordinate System|
+|:---:|
+
+[Learn more](https://github.com/domlysz/BlenderGIS/wiki/Gereferencing-management) about Georefencing management in Blender
 
 #### Setting up coordinate system
 __`GUI`__
 
-* Find and click on GIS addon’s interface in 3D viewport’s left toolbar. In the “Geoscene” section , click on the gear shape icon and switch to NAD83(HARN), click ok.
+* Find and click on GIS addon’s interface in 3D viewport’s left toolbar. In the “Geoscene” panel , click on the gear shape icon and switch to NAD83(HARN), click ok.
 
 |![Blender Viewport](img/addon_toolbar_1.JPG) <br> Georeferencing setup in Blender GIS |
 |:---:|
@@ -385,9 +395,9 @@ __`GUI`__
 * Import viewpoint shape file
    * Go to __file__ > __import__ > __Shapefile__
    * Browse workshop data directory, select *vpoints.shp* and click on __Import Shp__ . The shape import dialogue should appear in front of the GIS addon interface.
-   * Activate “Elevation from field” and in field section select “height”
+   * Activate “Elevation from field” and in field panel select “height”
    * Activate “Separate objects”
-   * Activate “Object name from field” and in field section select “Name”, you should be able to see 4 the points on the surface and 4 objects added to the Outliner with the names *Viewshed_1, Viewshed_2,Viewshed_3, Viewshed_4*
+   * Activate “Object name from field” and in field panel select “Name”, you should be able to see 4 the points on the surface and 4 objects added to the Outliner with the names *Viewshed_1, Viewshed_2,Viewshed_3, Viewshed_4*
    * Select __OK__
 
 |![Blender Viewport](img/shape_import.JPG) <br> Blender Gis shape import dialogue|
@@ -447,7 +457,7 @@ __`GUI`__
 * Select the "example1_dsm001"
 * While holding shift key select "Sphere_1" from outline to select both DSM and corresponding Sphere
 * go to __Properties Editor__ > __Object__ (cube icon)
-* In the __Transform__ section > __Location__ > __X:__ type *750* to move the duplicated surface 750 meters to the east  
+* In the __Transform__ panel > __Location__ > __X:__ type *750* to move the duplicated surface 750 meters to the east  
 * Create another copy of the DSM , put -750 for Y parameter to move the duplicate surface 750 meters to the south
 * Create another copy of the DSM, put 750 for X parameter and -750 in Y parameter. The final model should look like figure
 
@@ -494,7 +504,7 @@ __`GUI`__
 * Select the first DSM object "example_dsm1"
 * Go to __Properties tab__ > __Material__  Press __+ New__ button to add material
     * Rename the Material to "Viewshed1"
-    * Expand the __Surface__ section and click on the gray square shaped icon on the right side of the __Surface__ parameter to see a popup window with texture parameters. Select __Mix Shader__ . You should be able to see two __Shaders__ added below the mix shader.
+    * Expand the __Surface__ panel and click on the gray square shaped icon on the right side of the __Surface__ parameter to see a popup window with texture parameters. Select __Mix Shader__ . You should be able to see two __Shaders__ added below the mix shader.
 * Click on the first shader and select *Emission* from the dropdown list
     * Click on the radio button on the right side of the __color__ field  >  __texture__ >  __Image texture__
     * Click on __Open__ and load "viewshed_1_1.png". You should be able to see the viewshed draped on the DSM surface
