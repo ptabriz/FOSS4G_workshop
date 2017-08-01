@@ -7,20 +7,16 @@
 
 This is material for the summer geospatial studio held at Center for Geospatial Analytics, in Raleigh, NC, 2 August, 2017.
 
- [Blender](https://www.blender.org/).<br>
-
 Prepared by : [Payam Tabrizian](https://github.com/ptabriz) <br>
 Presented with: [Anna Petrasova](https://github.com/petrasovaa/), [Vaclav Petras](https://github.com/wenzeslaus), and [Helena Mitasova](https://github.com/hmitaso?tab=stars)<br>
 Tested and reviewed by: [Garrett Millar](https://github.com/gcmillar)
+___________________
+## Contents
 
-## Abstract
-
-What if your geospatial data and simulations like flooding, fire-spread and viewshed comupations are converted on-the-fly into realistic, interactive and immersive 3D worlds, without the need to deal with overly complicated or proprietary 3D modelling software? In this hands-on workshop we will explore how to automate importing and processing of various types of geospatial data (e.g., rasters, vectors) using Blender, an open-source 3D modelling and game engine software. We will start with a brief and focused introduction into Blender graphical user interface (GUI), Python API, as well as the GIS addon. Once we import our GIS data into Blender, we will go over the techniques (both with GUI and command line) to increase the realism of our 3D world through applying textures, shading, and lighting.
-
+### Abstract
 ### Part 1. Basics of Blender interface and functionalities
-[I. Intro](#introduction)<br>
+[I. Intro](#i-what-is-blender-and-why-using-Blender?)<br>
 [II. Basic components of blender interface](#ii-basic-components-of-the-blender-interface)<br>
-
 
 ### Part 2. Processing, shading and rendering geospatial data
 [I. Setting up the scene](#i-setting-up-the-scene)<br>
@@ -29,8 +25,14 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 [IV. Importing viewpoint shapefile](#iv-importing-viewpoint-shapefile)<br>
 [V. Shading the scene](#v-shading-the-scene)<br>
 [VI. 3D modelling made easy: scripting procedure](#vi-modelling-made-easy)
+
 ___________________
-## What is Blender and why use Blender?
+## Abstract
+
+What if your geospatial data and simulations like flooding, fire-spread and viewshed comupations are converted on-the-fly into realistic, interactive and immersive 3D worlds, without the need to deal with overly complicated or proprietary 3D modelling software? In this hands-on workshop we will explore how to automate importing and processing of various types of geospatial data (e.g., rasters, vectors) using Blender, an open-source 3D modelling and game engine software. We will start with a brief and focused introduction into Blender graphical user interface (GUI), Python API, as well as the GIS addon. Once we import our GIS data into Blender, we will go over the techniques (both with GUI and command line) to increase the realism of our 3D world through applying textures, shading, and lighting.
+
+___________________
+## I. What is Blender and why using Blender?
 Blender is an open-source 3D modelling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modelling workflow. Moreover, using [Blender4web](https://www.blend4web.com/en/) or [sketchfab](https://sketchfab.com/exporters/blender) addons, you can would be able to publish your geospatial models online, so that everyone can interactively explore or download your work. <br>
 
 [Learn more about Sketchfab]()<br>
@@ -329,7 +331,7 @@ __`GUI`__
 |![Blender Viewport](img/addon_toolbar_1.JPG) <br> Georeferencing setup in Blender GIS |
 |:---:|
 
-### III. Importing Digital surface model]
+### III. Importing Digital surface model
 ___________________
 __`GUI`__
 * Go to __file__ > __import__ > __Georeferenced Raster__
@@ -377,7 +379,7 @@ bpy.ops.object.mode_set(mode='OBJECT')
 |:---:|:---:|
 
 ___________________
-#### IV. Importing viewpoint shapefiles
+#### IV. Importing viewpoint shapefile
 
 In this step we will import viewpoint locations as a point feature shapefile. The features represent the location from which the viewsheds are computed on the digital surface.
 
