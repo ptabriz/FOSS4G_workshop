@@ -18,16 +18,17 @@ Tested and reviewed by: [Garrett Millar](https://github.com/gcmillar)
 What if your geospatial data and simulations like flooding, fire-spread and viewshed comupations are converted on-the-fly into realistic, interactive and immersive 3D worlds, without the need to deal with overly complicated or proprietary 3D modelling software? In this hands-on workshop we will explore how to automate importing and processing of various types of geospatial data (e.g., rasters, vectors) using Blender, an open-source 3D modelling and game engine software. We will start with a brief and focused introduction into Blender graphical user interface (GUI), Python API, as well as the GIS addon. Once we import our GIS data into Blender, we will go over the techniques (both with GUI and command line) to increase the realism of our 3D world through applying textures, shading, and lighting.
 
 ### Part 1. Basics of Blender interface and functionalities
-[I. Intro](#Introduction)<br>
-[II. Basic components of blender interface](#ii-basics-components-of-the-blender-interface)<br>
+[I. Intro](#introduction)<br>
+[II. Basic components of blender interface](#ii-basic-components-of-the-blender-interface)<br>
+
 
 ### Part 2. Processing, shading and rendering geospatial data
-[I. Setting up the scene](#i.-setting-up-the-scene)<br>
+[I. Setting up the scene](#i-setting-up-the-scene)<br>
 [II. Georeferencing the blender Scene](#ii-georeferencing-the-blender-scene)<br>
-[III. Importing digital surface model](#iii.-importing-digital-surface-models)<br>
-[IV. Importing viewpoint shapefile](#iv.-importing-viewpoint-shapefile)<br>
-[V. Shading the scene](#v.-shading-the-scene)<br>
-[VI. 3D modelling made easy: scripting procedure](#vi.-modelling-made-easy)
+[III. Importing digital surface model](#iii-importing-digital-surface-models)<br>
+[IV. Importing viewpoint shapefile](#iv-importing-viewpoint-shapefile)<br>
+[V. Shading the scene](#v-shading-the-scene)<br>
+[VI. 3D modelling made easy: scripting procedure](#vi-modelling-made-easy)
 ___________________
 ## What is Blender and why use Blender?
 Blender is an open-source 3D modelling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modelling workflow. Moreover, using [Blender4web](https://www.blend4web.com/en/) or [sketchfab](https://sketchfab.com/exporters/blender) addons, you can would be able to publish your geospatial models online, so that everyone can interactively explore or download your work. <br>
@@ -36,7 +37,7 @@ Blender is an open-source 3D modelling, rendering and game engine software. You 
 [A sample geospatial model in Sketchfab](https://sketchfab.com/models/298dfaf54e4447459275493e7b2adf96)<br>
 
 
-## II. Basics components of the Blender interface
+## II. Basic components of the Blender interface
 
 Blender has numerous components and features that, thanks to it open-source capabilities, are growing every day. Covering all aspects of the software itself require several lessons. The purpose of this section is to provide a brief introduction to Blender's graphical user interface and some of its features that are essential for working with geospatial data, and will be used throughout this tutorial.
 
@@ -261,7 +262,7 @@ There are two ways to complete the example; Scripting method (using blender's Py
 
 NOTE: For enhanced learning complete the example with both methods but do not mix and match. Try to follow one method from the beginning to the end.
 
-## I. Setting up the scene
+### I. Setting up the scene
 __`GUI`__
 * Run Blender and open the file "Example_A.blend".
 * Select the default __Cube__ object in 3D viewport and delete it (right-click on the object > press delete > ok )
