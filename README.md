@@ -21,7 +21,7 @@ ___________________
 ### Part 2. Processing, shading and rendering geospatial data
 [I. Setting up the scene](#i-setting-up-the-scene)<br>
 [II. Georeferencing the blender Scene](#ii-georeferencing-the-blender-scene)<br>
-[III. Importing digital surface model](#iii-importing-digital-surface-models)<br>
+[III. Importing digital surface model](#iii-importing-digital-surface-model)<br>
 [IV. Importing viewpoint shapefile](#iv-importing-viewpoint-shapefile)<br>
 [V. Shading the scene](#v-shading-the-scene)<br>
 [VI. 3D modelling made easy: scripting procedure](#vi-modelling-made-easy)
@@ -87,8 +87,6 @@ On the right side of the interaction mode, is the viewport __Shading mode__ whic
 #### Basic object selection and interaction
 
 __Objects__ are basically everything that you see in the 3D view. They include 3D objects, lights and camera. You can select any object in the scene using the mouse right-click. Selected objects are highlighted in orange so you can easily distinguish them. Use the 3 axes (i.e., handles) to move the object in your preferred direction. To select multiple objects, press and hold `control` key and right click on objects to add to your selection. You can rotate objects by pressing `R` keyboard button, or scale objects using `S` key. Note that when you are transforming an object, a numeric output on the left bottom of the 3D viewport will give you more precise feedback on how much you moved, rotated or scaled an object. You can delete the object by selecting it, pressing `delete` key and selecting ok.
-
-
 
 [Learn more about 3D view](https://docs.blender.org/manual/en/dev/editors/3dview/introduction.html#tool-shelf)
 ___________________
@@ -331,7 +329,7 @@ __`GUI`__
 |![Blender Viewport](img/addon_toolbar_1.JPG) <br> Georeferencing setup in Blender GIS |
 |:---:|
 
-### III. Importing Digital surface model
+### III. Importing digital surface model
 ___________________
 __`GUI`__
 * Go to __file__ > __import__ > __Georeferenced Raster__
