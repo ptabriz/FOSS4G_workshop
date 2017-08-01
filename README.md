@@ -19,15 +19,15 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 
 ### Part 1. Basics of Blender interface and functionalities
 [I. Intro](#Introduction)<br>
-[II. Basic components of blender interface](#basics-components-of-the-blender-interface)<br>
+[II. Basic components of blender interface](#ii-basics-components-of-the-blender-interface)<br>
 
 ### Part 2. Processing, shading and rendering geospatial data
 [I. Setting up the scene](#i.-setting-up-the-scene)<br>
-[II. Georeferencing the Blender Scene](#ii.-georeferencing-the-blender-scene)<br>
-[III. Importing Digital surface model](#iii.-importing-digital-surface-models)<br>
+[II. Georeferencing the blender Scene](#ii-georeferencing-the-blender-scene)<br>
+[III. Importing digital surface model](#iii.-importing-digital-surface-models)<br>
 [IV. Importing viewpoint shapefile](#iv.-importing-viewpoint-shapefile)<br>
 [V. Shading the scene](#v.-shading-the-scene)<br>
-[VI. 3D Modelling made easy: scripting procedure](#vi.-modelling-made-easy)
+[VI. 3D modelling made easy: scripting procedure](#vi.-modelling-made-easy)
 ___________________
 ## What is Blender and why use Blender?
 Blender is an open-source 3D modelling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modelling workflow. Moreover, using [Blender4web](https://www.blend4web.com/en/) or [sketchfab](https://sketchfab.com/exporters/blender) addons, you can would be able to publish your geospatial models online, so that everyone can interactively explore or download your work. <br>
@@ -36,7 +36,7 @@ Blender is an open-source 3D modelling, rendering and game engine software. You 
 [A sample geospatial model in Sketchfab](https://sketchfab.com/models/298dfaf54e4447459275493e7b2adf96)<br>
 
 
-## Basics components of the Blender interface
+## II. Basics components of the Blender interface
 
 Blender has numerous components and features that, thanks to it open-source capabilities, are growing every day. Covering all aspects of the software itself require several lessons. The purpose of this section is to provide a brief introduction to Blender's graphical user interface and some of its features that are essential for working with geospatial data, and will be used throughout this tutorial.
 
