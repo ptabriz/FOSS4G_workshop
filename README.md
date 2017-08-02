@@ -602,9 +602,10 @@ for obj in bpy.data.objects:
 #### Shading Viewpoints
 Now follow the same workflow to shade viewpoint spheres but this time only use diffuse node (*Diffuse BSDF*) a with solid orange color.
 
-* Select the first sphere, create a new material using nodes
-* Change the surface color to
-* repeat the same for all spheres
+* Select the first sphere, create a new material using Diffuse BSDF 
+* Change the surface color to orange
+* Load the material in all sphere objects
+
 ``` python
 import bpy
 for obj in bpy.data.objects:
