@@ -189,9 +189,10 @@ __`Example 3.`__ Basic object transformation using properties modifier
 * Change *Rotation* and *Scale* parameters to see how they affect the object
 
 
-__Materials__ tab allows you to assign or change an object’s material. You can add and remove material, or use material browser to assign previously created materials to the object. Some very basic material parameters include *Diffuse and Specular*. You can adjust the diffuse parameters to change the color and shading of the material and with Specular adjust the glossiness of the material. Also, play with the shading and transparency parameters to see how it impacts your object. In this tutorial we briefly introduce two basic components of Materials. namely __Shaders__ and __Textures__.  
+__Materials__ tab allows you to assign or change an object’s material. You can add and remove material, or use material browser to assign previously created materials to the object. In this tutorial we briefly introduce two basic components of Materials, __Shaders__ and __Textures__.  
 
-**Shading** (or coloring) allows you to adjust the base color (as modified by the diffusion and specular reflection phenomenon) and the light intensity. **Textures** . You can also assign texture to the materials. You can either select from preset textures already available in scene, or load a new one from hard drive.
+**Shading** (or coloring) allows you to adjust the base color (as modified by the diffusion and specular reflection phenomenon) and the light intensity.
+You can also assign __Texture__ to the materials. You can either select from preset textures already available in scene, or load a new one from hard drive. Lets practice shading and texturing in the following example.
 
 __`Example 4.`__ Assigning simple Shaders and Textures
 
