@@ -207,15 +207,16 @@ __`Example 4.`__ Assigning simple Shaders and Textures
   * Click on the __Diffuse BSDF__ field in front of the surface parameter and select *Glass BSDF*
   * Now try  *Emission BSDF* and *Glossy BSDF* shaders while the viewport shader is on *Rendered* mode to see the effect on rendering. Your material preview and scene rendering should look like the figure shown below
 
-![Blender Viewport](img/Materials_1.jpg) Diffuse BSDF  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Glass BSDF &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Glossy BSDF &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Emission
+![Blender Viewport](img/Materials_1.jpg) __Left to right:__ Diffuse BSDF , Glass BSDF, Glossy BSDF, Emission
 
 
 * Textures
   * While the shader is still on “Glossy BSDF”, click on the radio button in front of the “Color” parameter. A widget with several columns will appear. From the texture column, select “Voronoi” to see how texture impact the rendering.
   * Now try “Gradient” texture. Your material preview and scene rendering should look like the left two columns in the figure below.
 
-|![Blender Viewport](img/Materials_2.jpg) Gradient texture &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  Voronoi texture &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Diffuse Shader &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Mix Shader|
-|:---:|
+![Blender Viewport](img/Materials_2.jpg)
+__Left to right__: Gradient texture, Voronoi texture, Glossy BSDF, Mix Shader
+
 
 ___________________
 ### Node Editor (material)
