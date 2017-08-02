@@ -252,7 +252,7 @@ Other Complementary resources for learning blender interface
 
 ## Part 2. Processing, shading and rendering geospatial data
 
-In this section we will learn how to setup blender GIS addon, georeferences and importing raster and vector data and assigning simulations and orthophoto maps as textures. We will proceed with the instructions using a simple viewshed assignment. The aim is to visualize and compare viewsheds simulation computed for 4 different locations across a site. The general workflow is as following.
+In this section we will learn how to setup blender GIS addon and georeference the scene. We will also review the procedure for importing, processing and shading vector and raster data. We will proceed with the instructions using a simple viewshed assignment. Assignment goal is to visualize and compare viewshed simulations computed for 4 different locations across a site. The general workflow is as following.
 
 I) Preparing the scene and lighting
 II) Georeferencing the scene
