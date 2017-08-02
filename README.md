@@ -29,7 +29,7 @@ ___________________
 ___________________
 ## Abstract
 
-What if your geospatial data and simulations like flooding, fire-spread and viewshed are converted to realistic, interactive and immersive 3D worlds, without the need to deal with overly complicated or proprietary 3D modelling software ? In this hands-on workshop we will explore how to automate importing and processing of various types of geospatial data (e.g., rasters, vectors) using Blender, an open-source 3D modelling and game engine software. We will start with a brief and focused introduction into Blender graphical user interface (GUI), Python API, as well as the GIS addon. Once we import our GIS data into Blender, we will go over the techniques (both with GUI and command line) to increase the realism of our 3D world through applying textures, shading, and lighting.
+What if your geospatial data and simulations like flooding, fire-spread and viewshed are converted to realistic, interactive and immersive 3D worlds, without the need to deal with overly complicated or proprietary 3D modelling software ? In this hands-on workshop we will explore how to import and process various types of geospatial data (e.g., rasters, vectors) using Blender, an open-source 3D modelling and game engine software. We will start with a brief and focused introduction into Blender graphical user interface (GUI), Python API, as well as the GIS addon. Once we import our GIS data into Blender, we will go over the techniques (both with GUI and command line) to increase the realism of our 3D world through applying textures, shading, and lighting.
 
 ___________________
 ## I. What is Blender and why using Blender?
@@ -54,7 +54,7 @@ Blender's application window can be flexibly arranged and divided up into a numb
 
 __Editors__ are responsible for displaying and modifying different aspects of data. Imagine editors as full-fledge software specialized for a specific tasks, like changing data properties, image editing, video editing, animation design, game design, and etc. You can assign an area to a specific editor using __Editor Type selector__ , the first button at the left side of a header (figure below, left). Every area in Blender may contain any type of editor and it is also possible to open the same type multiple times.
 
-__Tabs__ are overlapping sections in the user-interface. The Tabs header can be vertical (Tool Shelf) or horizontal (Properties Editor, User Preferences).
+__Tabs__ are overlapping sections in the user-interface. Tabs can be vertical (Tool Shelf) or horizontal (Properties Editor, User Preferences).
 
 Another common feature is the __Header__, that contain menus and commonly used tools specific to each editor. It has a small horizontal strip shape with a lighter gray background, which sits either at the top or bottom of the area.
 
@@ -112,7 +112,7 @@ print (cubeObj.location)
 ```python
 cubeObj.location = (0, 2, 3)
 ```
-* move cube object 5 units in positive X direction
+* Move cube object 5 units in positive X direction
 ```python
 cubeObj.location [0] += 5
 ```
@@ -137,7 +137,7 @@ By pressing the __+__ icon you can start a new file and click on __Run Script__ 
 
  __`Example 2.`__  Batch processing simple object operations using text editor
 
-* Create a matrix of Cubes with varied size and location.
+* Create a matrix of 20 by 20 Cubes with varied size and location.
   * In the text editor click on the __+__ icon to create a new textfile
   * Copy and paste the snippet below and click on __Run script__ button
   * The results should look like the figure below
