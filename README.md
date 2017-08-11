@@ -283,7 +283,7 @@ There are two ways to complete the example; Scripting method (using blender's Py
 
 ### I. Setting up the scene
 
-The first step is to clean the scene and setup rendering and lighting parameters. 
+The first step is to clean the scene and setup rendering and lighting parameters.
 __`GUI`__
 * Run Blender and open the file "Example_A.blend".
 * Select the default __Cube__ object in 3D viewport and delete it (right-click on the object > press delete > ok )
@@ -383,7 +383,7 @@ bpy.ops.importgis.georaster(filepath=fileName,
 
 #### Surface subdivision and refinement
 Usually when surface or elevation models are imported in Blender they are downsampled to a defaults subdivision resulting in smoothing out the surface details. The following procedure subdivides the imported mesh into smaller faces to enhance the surface representation.
-In this step we increase the subdivision units to acquire a more detailed surface. 
+In this step we increase the subdivision units to acquire a more detailed surface.
 
 __`GUI`__
 * Select surface model (right click on the object)
@@ -438,8 +438,8 @@ Imported points are 2D vectors that cannot be rendered as they don't have actual
 __`GUI`__
 * To create spheres on the viewpoint location:
     * Go to 3D Viewport’s __bottom header__ > __Add__ > __Mesh__ > __UV sphere__. The Add UV sphere dialogue will open on the left side of the Toolbar. Set the Size parameter to 3.000
-    * Select Sphere object (by clicking on it in __Outliner__) and press ctrl+c , ctrl+v to make a copy of the object, you should see the *Sphere.001* in the outline. Make 3 copies of the sphere. 
-    * In the outliner rename the sphere objects to *Sphere1, Sphere2, ... , Sphere4*. You can do that by clicking on the object name. 
+    * Select Sphere object (by clicking on it in __Outliner__) and press ctrl+c , ctrl+v to make a copy of the object, you should see the *Sphere.001* in the outline. Make 3 copies of the sphere.
+    * In the outliner rename the sphere objects to *Sphere1, Sphere2, ... , Sphere4*. You can do that by clicking on the object name.
     * From __Outliner__ select the object *Viewshed_1*
     * Go to __Properties Editor__ > __Object__ > __Transform__ > __Location__ to retrieve the viewshed point’s coordinates (X,Y,Z)
 * To move each of the 4 spheres to the corresponding viewshed location:
@@ -470,7 +470,7 @@ for obj in bpy.data.objects:
 #### Generating 4 copies of the surface and viewpoint spheres
 
 In this step we create 3 addtional copies of the surface model and move each of the viewpoint spheres to the  
-corresponding surface. 
+corresponding surface.
 
 __`GUI`__
 * Select DSM object and press `ctrl+c` , `ctrl+v` to make a copy of the object , you should see the example1_dsm.001 in the outliner
@@ -479,7 +479,7 @@ __`GUI`__
 * In the ___Transform__ panel > __Delta Transform__ > __X:__ type *750* to move the duplicated surface 750 meters to the east  
 * Create another copy of the DSM , put -750 for Y parameter to move the duplicate surface 750 meters to the south
 * Create another copy of the DSM, put 750 for X parameter and -750 in Y parameter. The final model should look like figure
-* Repeat the same procedure for the 4 Spheres (starting from Sphere 1) so each of them are moved to one of the surface. 
+* Repeat the same procedure for the 4 Spheres (starting from Sphere 1) so each of them are moved to one of the surface.
 
 
 __`Python editor`__
@@ -516,7 +516,7 @@ sphere4Obj.location = (loc[0],loc[1]-750, loc[2])
 |:---:|
 
 ### V. Shading the scene
-Now we will create a mixed material to combine Orthophoto and viewshed maps. We will use emission shaders to show viewsheds as glowing surfaces. For doing that we have created grayscale viewshed maps with black background, emmission shader assigns greater light emmission power to the lighter pixels. 
+Now we will create a mixed material to combine Orthophoto and viewshed maps. We will use emission shaders to show viewsheds as glowing surfaces. For doing that we have created grayscale viewshed maps with black background, emmission shader assigns greater light emmission power to the lighter pixels.
 
 __`GUI`__
 * Make sure that the __Render engine__ is set to *Cycles* and 3D viewport __Shading__ is set to *Material*
@@ -536,7 +536,7 @@ __`GUI`__
 Now notice how the material logic and workflow is represented in Node editor. You can play with each of the individual nodes ,the links between them and the values.
 * Play with the __Fac__ slider on the __Mix shader__ node to adjust the mixture level
 * To repeat the shading procedure for the other 3 objects using "Viewshed_2_1.png", "Viewshed_3_1.png", "Viewshed_4_1.png"  
-    * Select the Surface object and Go to __Properties tab__ > __Material__  Press on whirpool shaped button (next to new botton) to browse and load "Viewshed 1" matarial. Make a new copy of the material by pressing the number button on the left side of the material name field. Rename the new material to "Viewshed 2". 
+    * Select the Surface object and Go to __Properties tab__ > __Material__  Press on whirpool shaped button (next to new botton) to browse and load "Viewshed 1" matarial. Make a new copy of the material by pressing the number button on the left side of the material name field. Rename the new material to "Viewshed 2".
     * Now either from the Node editor or in the Material tab change the emmission texture to "viewshed_2_1.png"
     * Repeat the same procedure for two other surfaces.
 
@@ -612,7 +612,7 @@ for obj in bpy.data.objects:
 #### Shading Viewpoints
 Now follow the same workflow to shade viewpoint spheres but this time only use diffuse node (*Diffuse BSDF*) a with solid orange color.
 
-* Select the first sphere, create a new material using Diffuse BSDF 
+* Select the first sphere, create a new material using Diffuse BSDF
 * Change the surface color to orange
 * Load the material in all sphere objects
 
