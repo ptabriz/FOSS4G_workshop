@@ -34,7 +34,7 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 [I. Intro to coupling in Blender](#importing-geospatial-data) <br>
 [II. Coupling example](#materials-and-texture)<br>
 
-### Part 4. Publish your work online using Blender4web (Isosurfaces)
+### Part 4. Publish your work online using Blender4web
 [I. Setting up the Blender4web addon](#georeferencing-the-blender-scene)<br>
 [II. Publishing the model using Blender4web](#georeferencing-the-blender-scene)<br>
 ___________________
@@ -612,6 +612,7 @@ for obj in bpy.data.objects:
 #### Shading Viewpoints
 Now follow the same workflow to shade viewpoint spheres but this time only use diffuse node (*Diffuse BSDF*) a with solid orange color.
 
+`‣ GUI`
 * Select the first sphere, create a new material using Diffuse BSDF
 * Change the surface color to orange
 * Load the material in all sphere objects
@@ -638,7 +639,10 @@ for obj in bpy.data.objects:
 |:---:|
 
 ### VI. Modelling made easy
+
+
 Now lets try to run the entire procedure with a python file using __Text editor__ and __Python console__  
+`‣ GUI`
 
 * From top header goto  __file__> __New__ to Open a fresh copy of Blender
 * Save the blender file with you preferred name in the workshop directory.
@@ -821,7 +825,11 @@ The solution is using blender's native module __modal operator__. Modal operator
 
 |![Blender Viewport](img/modal_test.gif) Modal timer example|
 |:---:|
+
+
 __example 1.__
+
+```‣ Procedure ```
 
 * Open the file *modal_example.blend*
 * Run the script that is loaded in the text editor
@@ -832,10 +840,8 @@ __Modal timer__ module looks like the following.
 
 -----
 <img src="img/coupling_scheme.jpg" height="280" > <img src="img/anim_viewshed.gif" height="280" >
-[II. Coupling example](#materials-and-texture)<br>
 
-
-
+__II. Coupling example__
 
 In this example we are using modal timer to monitor a system directory,
 In the folder provided there are two folders "Watch" and "Scratch". The scratch folder contains 45 shape files and 45 images. The shapefiles represent viewpoints across a path, and textures represent viewsheds simulated from those locations. Viewsheds are combined with landcover to show the typology of visible. Through a python script we setup modal timer to constantly look for files to import and process. To emulate the geospatial simulation we setup a second modal timer that copies the geospatial data from the Scratch folder to  Watch folder. The python script therefore is consisted of the following components
@@ -843,6 +849,17 @@ In the folder provided there are two folders "Watch" and "Scratch". The scratch 
 __1. adapt__ class Processes the incoming files and scene objects
 __2. Modal timer__ Looks into the __Watch__ directory, detects the type of incoming file, sends them to adapt class and finally removes the file from the watch folder.  
 __3. Modal_copy__ acts as a surrogate for your GIS software and copies texture and Point shape files from Scratch folder to the Watch folder to simulate the condition where your GIS application is automatically sending files over the network or locally.
+
+```‣ Procedure ```
+
+* Go to file > preferences > addons > BlenderGIS > import/Export panel
+* Unselect __Adjust 3D view__ and __Forced Textured solid shading__
+* Now run the script loaded into the __text editor__
+* The scripts adds a new panel in 3D view's toolbar (left side) with two buttons, __Watch mode__ and __Copy files__
+* First Press __Watch mode__ and then press __Copy files__
+* You should be able to see the viewshed maps and the observer location object updating along the path.
+
+<img src="img/setup_blender_gis.JPG" height="400" >
 
 
 ``` python
@@ -990,15 +1007,33 @@ class Modal_copy(bpy.types.Operator):
             wm.event_timer_remove(self._timer)
 ```
 
-* Go to file > preferences > addons > BlenderGIS > import/Export panel
-* Unselect __Adjust 3D view__ and __Forced Textured solid shading__
-* Now run the script loaded into the __text editor__
-* The scripts adds a new panel in 3D view's toolbar (left side) with two buttons, __Watch mode__ and __Copy files__
-* First Press __Watch mode__ and then press __Copy files__
-* You should be able to see the viewshed maps and the observer location object updating along the path.
 
-|![Blender Viewport](img/setup_blender_gis.JPG) Disabling adjust 3D view parameter in blender GIS addon|
-|:---:|
+
+
+### Part 4. Publish your work online using Blender4web (Isosurfaces)
+
+Blender4web
+
+Blender4web is a powerfull tool for publishing and sharing your data online.
+ It also alows you to design sophisticated in material. develop  Blend4Web eliminates barriers to the complex, low-level technology of WebGL, making it accessible even to non-coders.
+
+ Take a look at some of the sample application,
+
+__Example 2.__
+
+* To setup __Blender4web__ addon
+  * Go to __File__ > __Preferences__ > __addons__ > __install from file__
+
+
+We analyzed scenes of plazas in several cities revealing different spatio-temporal patterns. One of the studied plazas
+was analyzed before and after it has been redesigned, allowing us to directly study the effect of changes to the built
+environment on pedestrian behavior. We interactively visualized the spatio-temporal patterns of pedestrian densities
+using isosurfaces for given densities of interest. The shape of an isosurface shows the spatio-temporal evolution of
+
+ICC 2017: Proceedings of the 2017 International Cartographic Conference, Washington D.C. 2
+pedestrian density. A time axis is represented as a color ramp draped over the isosurface, facilitating an understand -
+ing of the relationship between the time and shape of the isosurface (Fig. 1).
+
 ------------
 
 ### Acknowledgment
