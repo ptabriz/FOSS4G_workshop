@@ -836,8 +836,7 @@ __Modal timer__ module looks like the following.
 [II. Coupling example](#materials-and-texture)<br>
 
 
-<img src="img/coupling_scheme.jpg" height="200" >
-<img src="img/anim_viewshed.gif" height="250" >
+<img src="img/coupling_scheme.jpg" height="200" > <img src="img/anim_viewshed.gif" height="220" >
 
 In this example we are using modal timer to monitor a system directory,
 In the folder provided there are two folders "Watch" and "Scratch". The watch folder is the location that modal timer is constantly looking for files to import and process. To emulate the geospatial simulation we setup a second modal timer that copies the geospatial data from the folder Scratch to the folder Watch.   
