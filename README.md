@@ -1,18 +1,22 @@
 
 
-<img src="img/cgaBlack.png" height="60" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/Blender_logo.png" height="60">
+<img src="img/FOSS4g_logo.png" height="100" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/Blender_logo.png" height="60">
 
 <br>
-# 3D visualization of geospatial data using Blender
-This is material for the summer geospatial studio held at Center for Geospatial Analytics, in Raleigh, NC, 2 August, 2017.
+# Real-time 3D visualization of geospatial data using Blender
+
+This is material for the FOSS4GNA 2017 workshop held at Harvard CGA, in Boston, MA, August , 2017.
 
 Prepared by : [Payam Tabrizian](https://github.com/ptabriz) <br>
 Presented with: [Anna Petrasova](https://github.com/petrasovaa/), [Vaclav Petras](https://github.com/wenzeslaus), and [Helena Mitasova](https://github.com/hmitaso?tab=stars)<br>
 Tested and reviewed by: [Garrett Millar](https://github.com/gcmillar)
 ___________________
+## Prelude
+
+What if your geospatial data and simulations like flooding, fire-spread and viewshed comupations are converted on-the-fly into realistic, interactive and immersive 3D worlds, without the need to deal with overly complicated or proprietary 3D modelling software? In this hands-on workshop we will explore how to automate importing and processing of various types of geospatial data (e.g., rasters, vectors) using Blender, an open-source 3D modelling and game engine software. We will start with a brief and focused introduction into Blender graphical user interface (GUI), Python API, as well as the GIS and Virtual reality addons. Once we import our GIS data into Blender, we will go over the techniques (both with GUI and command line) to increase the realism of our 3D world through applying textures, shading, and lighting. To make our work reusable for different projects, we will automate all importing and processing workflows using Python. Finally, we will show how to publish it online to share it with the world.
+
 ## Contents
 
-### Abstract
 ### Part 1. Basics of Blender interface and functionalities
 [I. Intro](#i-what-is-blender-and-why-using-Blender?)<br>
 [II. Basic components of blender interface](#ii-basic-components-of-the-blender-interface)<br>
@@ -26,10 +30,16 @@ ___________________
 [V. Shading the scene](#v-shading-the-scene)<br>
 [VI. 3D modelling made easy: scripting procedure](#vi-modelling-made-easy)
 
-___________________
-## Abstract
+### Part 3. Real-time 3D modelling using modal timer
+[I. Intro to coupling in Blender](#importing-geospatial-data) <br>
+[II. Coupling example](#materials-and-texture)<br>
 
-What if your geospatial data and simulations like flooding, fire-spread and viewshed are converted to realistic, interactive and immersive 3D worlds, without the need to deal with overly complicated or proprietary 3D modelling software ? In this hands-on workshop we will explore how to import and process various types of geospatial data (e.g., rasters, vectors) using Blender, an open-source 3D modelling and game engine software. We will start with a brief and focused introduction into Blender graphical user interface (GUI), Python API, as well as the GIS addon. Once we import our GIS data into Blender, we will go over the techniques (both with GUI and command line) to increase the realism of our 3D world through applying textures, shading, and lighting.
+### Part 4. Publish your work online using Blender4web (Isosurfaces)
+[I. Setting up the Blender4web addon](#georeferencing-the-blender-scene)<br>
+[II. Publishing the model using Blender4web](#georeferencing-the-blender-scene)<br>
+___________________
+
+
 
 ___________________
 ## I. What is Blender and why using Blender?
@@ -260,7 +270,7 @@ III) Importing and processing the digital surface raster
 IV) Importing and processing the viewpoint shapefile
 V) Draping the viewshed map and orthophoto on the surface model
 
-*Note:* Viewshed is a raster map showing a surface's visible areas from a given locations.  
+*Note:* Viewshed is a raster map showing a surface's visible areas from a given location.  
 
 There are two ways to complete the example; Scripting method (using blender's Python editor) and GUI (graphical user interface) method. For each step, the GUI procedure is listed as bullet points. Below that you can find the code snippet if you would like to follow the Scripting procedure. To execute the code snippet open a new text file in __Text Editor__ and for each step directly copy-paste the code snippet into the editor and click on __Run Script__ to execute the code.
 
@@ -789,7 +799,207 @@ for area in bpy.context.screen.areas:
                   space.viewport_shade = 'MATERIAL'
 
 ```
+### Part 3. Real-time 3D modelling using modal timer
+[I. Modal timer operator](#importing-geospatial-data) <br>
 
+In this step we learn the basics to setup a monitoring system inside blender that can be setup to continuously watch for incoming commands or files. These data can be transferred through network using a system directory or through sockets. One important note is that Blender is not compatible with typical monitoring libraries like Watchmode or Threading. The following is Blender API's explanation for this.
+"Tools that lock Blender in a loop and redraw are highly discouraged since they conflict with Blenders ability to run multiple operators at once and update different parts of the interface as the tool runs."
+
+The solution is using blender's native module __modal operator__. Modal operators execute on user input or setup their own timers to run frequently, they can handle the events or pass through to be handled by the keymap or other modal operators. Other than the coupling, __Modal timer__ is especially useful for interactive tools. We will now learn the software functionality through the following example.
+
+|![Blender Viewport](img/modal_test.gif) Modal timer example|
+|:---:|
+__example 1.__
+
+* Open the file *modal_example.blend*
+* Run the script that is loaded in the text editor
+* Select the Monkey object and move it around. You will see that as you are moving the object, three operations are running simultaneously: 1) the RGB values change, 2) a text object changes to show the updated RGB values, 3) and the timer text object changes to show the elapsed time in seconds.
+* Cancel the modal mode using "Esc" key.
+
+__Modal timer__ module looks like the following.
+
+
+
+
+[II. Coupling example](#materials-and-texture)<br>
+
+
+<img src="img/coupling_scheme.jpg" height="200" >
+<img src="img/anim_viewshed.gif" height="250" >
+
+In this example we are using modal timer to monitor a system directory,
+In the folder provided there are two folders "Watch" and "Scratch". The watch folder is the location that modal timer is constantly looking for files to import and process. To emulate the geospatial simulation we setup a second modal timer that copies the geospatial data from the folder Scratch to the folder Watch.   
+
+
+Lets go over the python script and the components
+
+* __adapt__ class processes the incoming files and scene objects   
+
+``` python
+class adapt:
+    ''' Adapt the scene objects based on viewpoint and texture files'''
+
+    def __init__(self):
+        self.terrain = "DSM"
+        self.viewpoint = "Torus"
+        filePath = os.path.dirname(bpy.path.abspath("//"))
+        fileName = os.path.join(filePath,'vpoints.shp')
+
+    def viewshed(self,texture,vpoint):
+        ''' Recieve and process viewshed point shape file and texture '''
+
+        ## import the shapefile, move viewmarker and delete the shapefile ##
+        vpointDir = os.path.join (watchFolder,vpoint)
+        vpointFile = vpointDir + "/" + vpoint + ".shp"
+        if not bpy.data.objects.get(vpoint):
+            bpy.ops.importgis.shapefile(filepath=vpointFile,fieldElevName="elev",
+            shpCRS='EPSG:3358')
+
+        bpy.data.objects[self.viewpoint].location = bpy.data.objects[vpoint].location
+        shutil.rmtree(vpointDir)
+
+        ## assign change terrain's texture file ##
+        if bpy.data.objects.get(self.terrain):
+            bpy.data.objects[self.terrain].select = True
+            # remove the texture file from the directory
+            os.remove(os.path.join(watchFolder,texture))
+
+        # Change the material emmission shader texture #         
+        if not bpy.data.images.get(texture):
+            texpath = os.path.join(scratchFolder,texture)
+            bpy.data.images.load(texpath)
+        # get the active object material #
+        mat = bpy.data.materials.get("Material")
+        # Get material tree , nodes and links #
+        nodes = mat.node_tree.nodes
+        nodes.active = nodes[5]
+        #Replace the texture #
+        nodes[5].image = bpy.data.images[texture]
+
+```
+
+* __Modal timer__ looks into the __Watch__ directory, detects the type of incoming file, sends them to adapt class and finally removes the file from the watch folder.
+
+``` python
+class Modal_watch(bpy.types.Operator):
+        """Operator which interatively runs from a timer"""
+
+        bl_idname = "wm.loose_coupling_timer"
+        bl_label = "loose coupling timer"
+        _timer = 0
+        _timer_count = 0
+
+        def modal(self, context, event):
+            if event.type in {"RIGHTMOUSE", "ESC"}:
+                return {"CANCELLED"}
+
+            # this condition encomasses all the actions required for watching
+            # the folder and related file/object operations
+
+            if event.type == "TIMER":
+
+                if self._timer.time_duration != self._timer_count:
+                    self._timer_count = self._timer.time_duration
+                    fileList = (os.listdir(watchFolder))
+                    # Tree patches #
+                    for fileName in fileList:
+                        if ".png" in fileName:
+                            vpoint = "viewpoint_" + fileName.split(".")[0]
+                            if vpoint in fileList:
+                                adapt().viewshed(fileName,vpoint)
+                                self.adaptMode = "VIEWSHED"
+            return {"PASS_THROUGH"}
+
+        def execute(self, context):
+
+            bpy.context.space_data.show_manipulator = False
+            wm = context.window_manager
+            wm.modal_handler_add(self)
+            self._timer = wm.event_timer_add(3, context.window)
+            self.adaptMode = None
+
+            return {"RUNNING_MODAL"}
+
+        def cancel(self, context):
+            wm = context.window_manager
+            wm.event_timer_remove(self._timer)
+
+```
+* __Modal_copy__ is not an essential component of the coupling software and here is used for demonstration purpose. It acts as a surrogate for your GIS software and copies texture and Point shape files from Scratch folder to the Watch folder to simulate the condition where your GIS application is automatically sending files over the network or locally.
+
+``` python
+class Modal_copy(bpy.types.Operator):
+        """Operator which interatively runs from a timer"""
+
+        bl_idname = "wm.copy_files"
+        bl_label = "copy files to watch folder"
+        _timer = 0
+        _timer_count = 0
+        _index = 0
+
+
+        def modal(self, context, event):
+            if event.type in {"RIGHTMOUSE", "ESC"}:
+                return {"CANCELLED"}
+
+            if event.type == "TIMER":
+                if self._index == len(self.copyList):
+                    self._index = 0
+                if self._timer.time_duration != self._timer_count:
+
+                    if self.copyList and not os.listdir(watchFolder):
+                        item = self.copyList[self._index]
+                        if item not in self._copiedList:
+                            fileSrc = os.path.join(scratchFolder, item[1])
+                            fileDst = os.path.join(watchFolder, item[1])
+                            dirSrc = os.path.join(scratchFolder, item[2])
+                            dirDst = os.path.join(watchFolder, item[2])
+                            shutil.copytree(dirSrc, dirDst)
+                            shutil.copyfile(fileSrc, fileDst)
+                            self._copiedList.append(item)
+                            self._index += 1
+            return {"PASS_THROUGH"}
+
+        def execute(self, context):
+
+            wm = context.window_manager
+            wm.modal_handler_add(self)
+            self._timer = wm.event_timer_add(1, context.window)
+            fileList = os.listdir(scratchFolder)
+            self._copiedList = []
+            self.copyList = []
+            for f in fileList:
+                if ".png" in f:
+                    vpointDir = "viewpoint_" + f.split(".")[0]
+
+                    if vpointDir in fileList:
+                        self.copyList.append((int(f.split(".")[0]),f,vpointDir))
+
+            self.copyList = sorted(self.copyList)
+
+            return {"RUNNING_MODAL"}
+
+        def cancel(self, context):
+
+            wm = context.window_manager
+            wm.event_timer_remove(self._timer)
+```
+
+
+
+
+* Go to file > preferences > addons > BlenderGIS > import/Export panel
+* Unselect __Adjust 3D view__ and __Forced Textured solid shading__
+
+
+* Now run the script loaded into the __text editor__
+* The scripts adds a new panel in 3D view's toolbar (left side) with two buttons, __Watch mode__ and __Copy files__
+* First Press __Watch mode__ and then press __Copy files__
+* You should be able to see the viewshed maps and the observe location object updating along the path.
+* While the code running  
+
+|![Blender Viewport](img/setup_blender_gis.JPG) Disabling adjust 3D view parameter in blender GIS addon|
+|:---:|
 ------------
 
 ### Acknowledgment
