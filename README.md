@@ -476,7 +476,7 @@ __`GUI`__
 * Select DSM object and press `ctrl+c` , `ctrl+v` to make a copy of the object , you should see the example1_dsm.001 in the outliner
 * Select the "example1_dsm001"
 * go to __Properties Editor__ > __Object__ (cube icon)
-* In the ___Transform__ panel > __Delta Transform__ > __X:__ type *750* to move the duplicated surface 750 meters to the east  
+* In the __Transform__ panel > __Delta Transform__ > __X:__ type *750* to move the duplicated surface 750 meters to the east  
 * Create another copy of the DSM , put -750 for Y parameter to move the duplicate surface 750 meters to the south
 * Create another copy of the DSM, put 750 for X parameter and -750 in Y parameter. The final model should look like figure
 * Repeat the same procedure for the 4 Spheres (starting from Sphere 1) so each of them are moved to one of the surface.
@@ -687,7 +687,7 @@ lamp.node_tree.nodes["Emission"].inputs[1].default_value = 6
 # Set render engine to cycles
 bpy.context.scene.render.engine = 'CYCLES'
 bpy.ops.importgis.georaster(filepath=dsmName,
-                            importMode="DEM", subdivision="mesh",
+                            importMode="DEM", subdivision="subsurf",
                             rastCRS="EPSG:3358")
 
 # Subdivision render engine to cycles
@@ -830,21 +830,20 @@ __example 1.__
 
 __Modal timer__ module looks like the following.
 
-
-
-
+-----
+<img src="img/coupling_scheme.jpg" height="280" > <img src="img/anim_viewshed.gif" height="280" >
 [II. Coupling example](#materials-and-texture)<br>
 
 
-<img src="img/coupling_scheme.jpg" height="280" > <img src="img/anim_viewshed.gif" height="280" >
+
 
 In this example we are using modal timer to monitor a system directory,
-In the folder provided there are two folders "Watch" and "Scratch". The watch folder is the location that modal timer is constantly looking for files to import and process. To emulate the geospatial simulation we setup a second modal timer that copies the geospatial data from the folder Scratch to the folder Watch.   
+In the folder provided there are two folders "Watch" and "Scratch". The scratch folder contains 45 shape files and 45 images. The shapefiles represent viewpoints across a path, and textures represent viewsheds simulated from those locations. Viewsheds are combined with landcover to show the typology of visible. Through a python script we setup modal timer to constantly look for files to import and process. To emulate the geospatial simulation we setup a second modal timer that copies the geospatial data from the Scratch folder to  Watch folder. The python script therefore is consisted of the following components
 
+__1. adapt__ class Processes the incoming files and scene objects
+__2. Modal timer__ Looks into the __Watch__ directory, detects the type of incoming file, sends them to adapt class and finally removes the file from the watch folder.  
+__3. Modal_copy__ acts as a surrogate for your GIS software and copies texture and Point shape files from Scratch folder to the Watch folder to simulate the condition where your GIS application is automatically sending files over the network or locally.
 
-Lets go over the python script and the components
-
-* __adapt__ class processes the incoming files and scene objects   
 
 ``` python
 class adapt:
@@ -888,9 +887,6 @@ class adapt:
         nodes[5].image = bpy.data.images[texture]
 
 ```
-
-* __Modal timer__ looks into the __Watch__ directory, detects the type of incoming file, sends them to adapt class and finally removes the file from the watch folder.
-
 ``` python
 class Modal_watch(bpy.types.Operator):
         """Operator which interatively runs from a timer"""
@@ -936,8 +932,6 @@ class Modal_watch(bpy.types.Operator):
             wm.event_timer_remove(self._timer)
 
 ```
-* __Modal_copy__ is not an essential component of the coupling software and here is used for demonstration purpose. It acts as a surrogate for your GIS software and copies texture and Point shape files from Scratch folder to the Watch folder to simulate the condition where your GIS application is automatically sending files over the network or locally.
-
 ``` python
 class Modal_copy(bpy.types.Operator):
         """Operator which interatively runs from a timer"""
@@ -996,18 +990,12 @@ class Modal_copy(bpy.types.Operator):
             wm.event_timer_remove(self._timer)
 ```
 
-
-
-
 * Go to file > preferences > addons > BlenderGIS > import/Export panel
 * Unselect __Adjust 3D view__ and __Forced Textured solid shading__
-
-
 * Now run the script loaded into the __text editor__
 * The scripts adds a new panel in 3D view's toolbar (left side) with two buttons, __Watch mode__ and __Copy files__
 * First Press __Watch mode__ and then press __Copy files__
-* You should be able to see the viewshed maps and the observe location object updating along the path.
-* While the code running  
+* You should be able to see the viewshed maps and the observer location object updating along the path.
 
 |![Blender Viewport](img/setup_blender_gis.JPG) Disabling adjust 3D view parameter in blender GIS addon|
 |:---:|
