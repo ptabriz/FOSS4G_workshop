@@ -115,7 +115,7 @@ __`Example 1.`__ Simple object operation using python console.
   * Copy and paste the individual command lines in the console and press enter  
 
 ```python
-cubeObj = bpy.data.objects[“cube”]
+cubeObj = bpy.data.objects[“Cube”]
 print (cubeObj.location)
 ```
 * Move cube object to location *x = 0 , y = 2 , z = 3*
@@ -194,7 +194,7 @@ __Object properties__ tab allows you to transform the location, orientation and 
 __`Example 3.`__ Basic object transformation using properties modifier
 
 * Make sure that *Suzanne* object is selected. It should be highlighted in __outliner__  
-* Go to __Properties editor__ > __Object tab__ > expand the __Transform__ panel
+* Go to __Properties editor__ ‣  __Object tab__ ‣  expand the __Transform__ panel
 * Type *3, 2, 4* for *X, Y, Z* parameters, respectively.
 * Change *Rotation* and *Scale* parameters to see how they affect the object
 
@@ -208,11 +208,11 @@ __`Example 4.`__ Assigning simple Shaders and Textures
 
 * Shaders
   * From outlier select object make sure that *Suzanne* object is selected
-  * Go to __properties editor__ > __object tab__ > click on the __+ New__ button to create a new material
+  * Go to __properties editor__ ‣  __object tab__ ‣  click on the __+ New__ button to create a new material
   * Double click on the material name (e.g., *Material.001*) and change it to *Mymat*
   * Expand the preview panel to see a live preview of the material as you are changing it
   * Change the color parameter to red
-  * Go to 3D editor bottom __Header__ > __Viewport shading__ > __rendered__ to see the object render in realtime
+  * Go to 3D editor bottom __Header__ ‣  __Viewport shading__ ‣  __rendered__ to see the object render in realtime
   * Change the color to yellow
   * Click on the __Diffuse BSDF__ field in front of the surface parameter and select *Glass BSDF*
   * Now try  *Emission BSDF* and *Glossy BSDF* shaders while the viewport shader is on *Rendered* mode to see the effect on rendering. Your material preview and scene rendering should look like the figure shown below
@@ -239,8 +239,8 @@ In this example we mix a glossy shader with a diffuse shader to make a composite
 * Switch the python console editor (bottom left area) to __Node editor__ (figure below, left).
 * In the node editor You will see the nodes we have already setup. The Glossy node shader’s output is connected to the surface input of the Material output.  
 We will now add two other shaders, a diffuse shader, and a mix shader.
-* From the Noder Editor’s bottom Header > __Add__ > __Shader__ > __Diffuse BSDF__
-* From the Noder Editor’s bottom Header >__Add__ > __Shader__ > __Mix shader__. You should be able to see both nodes have been added in to your node editor.
+* From the Noder Editor’s bottom Header ‣  __Add__ ‣  __Shader__ ‣  __Diffuse BSDF__
+* From the Noder Editor’s bottom Header ‣ __Add__ ‣  __Shader__ ‣  __Mix shader__. You should be able to see both nodes have been added in to your node editor.
 * Change the color value of the Diffuse node to *R: 0.075 G: 0.35 B: 0.50*
 * Disconnect the __Glossy BSDF__ input from the surface
 * Connect BSDF output of both Diffuse and Glossy shaders to the inputs on the left side of the Mix (Shader)
@@ -286,14 +286,14 @@ There are two ways to complete the example; Scripting method (using blender's Py
 The first step is to clean the scene and setup rendering and lighting parameters.
 __`GUI`__
 * Run Blender and open the file "Example_A.blend".
-* Select the default __Cube__ object in 3D viewport and delete it (right-click on the object > press delete > ok )
+* Select the default __Cube__ object in 3D viewport and delete it (right-click on the object ‣  press delete ‣  ok )
 * Set __render engine__ to "Cycles". You can find it in the top header, the default is "Blender Render"
 * To increase the _Lamp_ elevation and change the Lamp type to "Sun" for appropriate lighting:
     * Left click on the __Lamp__ object in __Outliner__ to select it
-    * Go to __Properties editor__ > __Object__ (the orange cube icon) > __Transform__ panel > in the __Location__ matrix, change the *Z* value to 1000 (see below figure if needed)
+    * Go to __Properties editor__ ‣  __Object__ (the orange cube icon) ‣  __Transform__ panel ‣  in the __Location__ matrix, change the *Z* value to 1000 (see below figure if needed)
 * For geospatial models you need a more powerfull light source. To change lamp type to Sun and increase the emission:
-    * In __Properties editor__ > __Lamp__ (two icons to the right of the __Object__ icon) > expand the __Lamp__ panel > Change lamp type to *Sun*
-    * Expand the __Nodes__ panel > Click on __Use Nodes__ to enable modifying Sun parameters.
+    * In __Properties editor__ ‣  __Lamp__ (two icons to the right of the __Object__ icon) ‣  expand the __Lamp__ panel ‣  Change lamp type to *Sun*
+    * Expand the __Nodes__ panel ‣  Click on __Use Nodes__ to enable modifying Sun parameters.
     * Set the __Strength__ parameter to 6.00
 
 __`Python editor`__
@@ -326,7 +326,7 @@ bpy.context.scene.render.engine = 'CYCLES'
 
 #### Setting up Blender GIS addon
 * [Download](https://github.com/ptabriz/BlenderGIS) the BlenderGIS addon
-* Go to __file__ >  __user preferences__ ( `Alt + Ctrl + U` ) > __Add-ons__ > __Install from File__ (bottom of the window)
+* Go to __file__ ‣   __user preferences__ ( `Alt + Ctrl + U` ) ‣  __Add-ons__ ‣  __Install from File__ (bottom of the window)
 * Browse and select "BlenderGIS-master.zip" file
 * You should be able to see the addon __3Dview: BlenderGIS__ added to the list. If not, type "gis" in the search bar while making sure that in the __Categories__ panel __All__ is selected. In the search results you should be able to see __3Dview: BlenderGIS__. Select to load the addon.
 * From the bottom of the preferences window click __Save User Settings__ so the addon is saved and autmatically loaded each time you open blender
@@ -359,7 +359,7 @@ Rasters can be imported and used in different ways. You can import them _As DEM_
 Note: Blender GIS imports both Digital Elevation Model (DEM) and Digital Surface Model (DSM) through _As DEM_ method.
 ___________________
 __`GUI`__
-* Go to __file__ > __import__ > __Georeferenced Raster__
+* Go to __file__ ‣  __import__ ‣  __Georeferenced Raster__
 * On the bottom left side of the window find  __Mode__ and select __As DEM__
 * Set __subdivision__ to *Subsurf* and select *NAD83(HARN)* for georeferencing
 * Browse to the 'workshop_material' folder and select 'example1_dsm.tif'
@@ -387,11 +387,11 @@ In this step we increase the subdivision units to acquire a more detailed surfac
 
 __`GUI`__
 * Select surface model (right click on the object)
-* Go to __3D view__ editor's bottom toolbar > __Object interaction mode__ >  __Edit Mode__
+* Go to __3D view__ editor's bottom toolbar ‣  __Object interaction mode__ ‣   __Edit Mode__
 * Switch to __Face select__
-* If object is not orange in color (i.e., nothing is selected), go to __Select__ > __(De)select All__ (or press `A`) to select all faces (when the object faces are selected, they will turn orange)
-* Go to __Tools__ (left toolbar) > __Mesh Tools__ > __Subdivide__ . The subdivide dialogue should appear on the bottom left on the toolbar. Type "4" in the number of cuts tab
-* Go to __3D view__ editor's bottom toolbar > __Object interaction mode__ >  __Object Mode__ . You should be able to see the surface details at this point (bottom figure, right image).
+* If object is not orange in color (i.e., nothing is selected), go to __Select__ ‣  __(De)select All__ (or press `A`) to select all faces (when the object faces are selected, they will turn orange)
+* Go to __Tools__ (left toolbar) ‣  __Mesh Tools__ ‣  __Subdivide__ . The subdivide dialogue should appear on the bottom left on the toolbar. Type "4" in the number of cuts tab
+* Go to __3D view__ editor's bottom toolbar ‣  __Object interaction mode__ ‣   __Object Mode__ . You should be able to see the surface details at this point (bottom figure, right image).
 <br>
 
 __`Python editor `__
@@ -413,7 +413,7 @@ In this step we will import viewpoint locations as a point feature shapefile. Wi
 
 __`GUI`__
 * Import viewpoint shape file
-   * Go to __file__ > __import__ > __Shapefile__
+   * Go to __file__ ‣  __import__ ‣  __Shapefile__
    * Browse workshop data directory, select *vpoints.shp* and click on __Import Shp__ . The shape import dialogue should appear in front of the GIS addon interface.
    * Activate “Elevation from field” and in field panel select “height”
    * Activate “Separate objects”
@@ -437,11 +437,11 @@ Imported points are 2D vectors that cannot be rendered as they don't have actual
 
 __`GUI`__
 * To create spheres on the viewpoint location:
-    * Go to 3D Viewport’s __bottom header__ > __Add__ > __Mesh__ > __UV sphere__. The Add UV sphere dialogue will open on the left side of the Toolbar. Set the Size parameter to 3.000
+    * Go to 3D Viewport’s __bottom header__ ‣  __Add__ ‣  __Mesh__ ‣  __UV sphere__. The Add UV sphere dialogue will open on the left side of the Toolbar. Set the Size parameter to 3.000
     * Select Sphere object (by clicking on it in __Outliner__) and press ctrl+c , ctrl+v to make a copy of the object, you should see the *Sphere.001* in the outline. Make 3 copies of the sphere.
     * In the outliner rename the sphere objects to *Sphere1, Sphere2, ... , Sphere4*. You can do that by clicking on the object name.
     * From __Outliner__ select the object *Viewshed_1*
-    * Go to __Properties Editor__ > __Object__ > __Transform__ > __Location__ to retrieve the viewshed point’s coordinates (X,Y,Z)
+    * Go to __Properties Editor__ ‣  __Object__ ‣  __Transform__ ‣  __Location__ to retrieve the viewshed point’s coordinates (X,Y,Z)
 * To move each of the 4 spheres to the corresponding viewshed location:
     * Copy and paste the retrieved coordinates from Viewshed_1 into the location parameters for Sphere1
     * Add 2.0 extra units to the Z parameter (only for __Location__) to raise the spheres above the ground
@@ -475,8 +475,8 @@ corresponding surface.
 __`GUI`__
 * Select DSM object and press `ctrl+c` , `ctrl+v` to make a copy of the object , you should see the example1_dsm.001 in the outliner
 * Select the "example1_dsm001"
-* go to __Properties Editor__ > __Object__ (cube icon)
-* In the __Transform__ panel > __Delta Transform__ > __X:__ type *750* to move the duplicated surface 750 meters to the east  
+* go to __Properties Editor__ ‣  __Object__ (cube icon)
+* In the __Transform__ panel ‣  __Delta Transform__ ‣  __X:__ type *750* to move the duplicated surface 750 meters to the east  
 * Create another copy of the DSM , put -750 for Y parameter to move the duplicate surface 750 meters to the south
 * Create another copy of the DSM, put 750 for X parameter and -750 in Y parameter. The final model should look like figure
 * Repeat the same procedure for the 4 Spheres (starting from Sphere 1) so each of them are moved to one of the surface.
@@ -522,21 +522,21 @@ __`GUI`__
 * Make sure that the __Render engine__ is set to *Cycles* and 3D viewport __Shading__ is set to *Material*
 * Change the bottom editor panel to __Node editor__. This can be done by simply changing the Editor Type selector (bottom left hand side of the window).
 * Select the first DSM object "example_dsm1"
-* Go to __Properties tab__ > __Material__  Press __+ New__ button to add material
+* Go to __Properties tab__ ‣  __Material__  Press __+ New__ button to add material
     * Rename the Material to "Viewshed1"
     * Expand the __Surface__ panel and click on the gray square shaped icon on the right side of the __Surface__ parameter to see a popup window with texture parameters. Select __Mix Shader__ . You should be able to see two __Shaders__ added below the mix shader.
 * Click on the first shader and select *Emission* from the dropdown list
-    * Click on the radio button on the right side of the __color__ field  >  __texture__ >  __Image texture__
+    * Click on the radio button on the right side of the __color__ field  ‣   __texture__ ‣   __Image texture__
     * Click on __Open__ and load "viewshed_1_1.png". You should be able to see the viewshed draped on the DSM surface
     * Change the __Strength__ slider to 1.8 to increase the viewshed's emission power
 * Click on the second shader and select *Diffuse BSDF* from the dropdown list
-    * Click on the radio button on the right side of the __color__ field  >  __texture__ >  __Image texture__
+    * Click on the radio button on the right side of the __color__ field  ‣   __texture__ ‣   __Image texture__
     * Click on __Open__ and load "ortho.png". You should be able to see the viewshed draped on the DSM surface
 
 Now notice how the material logic and workflow is represented in Node editor. You can play with each of the individual nodes ,the links between them and the values.
 * Play with the __Fac__ slider on the __Mix shader__ node to adjust the mixture level
 * To repeat the shading procedure for the other 3 objects using "Viewshed_2_1.png", "Viewshed_3_1.png", "Viewshed_4_1.png"  
-    * Select the Surface object and Go to __Properties tab__ > __Material__  Press on whirpool shaped button (next to new botton) to browse and load "Viewshed 1" matarial. Make a new copy of the material by pressing the number button on the left side of the material name field. Rename the new material to "Viewshed 2".
+    * Select the Surface object and Go to __Properties tab__ ‣  __Material__  Press on whirpool shaped button (next to new botton) to browse and load "Viewshed 1" matarial. Make a new copy of the material by pressing the number button on the left side of the material name field. Rename the new material to "Viewshed 2".
     * Now either from the Node editor or in the Material tab change the emmission texture to "viewshed_2_1.png"
     * Repeat the same procedure for two other surfaces.
 
@@ -644,12 +644,12 @@ for obj in bpy.data.objects:
 Now lets try to run the entire procedure with a python file using __Text editor__ and __Python console__  
 `‣ GUI`
 
-* From top header goto  __file__> __New__ to Open a fresh copy of Blender
+* From top header goto  __file__‣  __New__ to Open a fresh copy of Blender
 * Save the blender file with you preferred name in the workshop directory.
   __Note__: This is an important step since your all the paths in python code are linked to that directory
 * In the top header find __Layout__ (right next to __help__ ) and switch the layout to *Scripting* The scripting layout includes : a __Text editor__(left), a __Python Console__ (bottom) and __3D view__ (right)
 * Procedure for __Text editor__
-  * In __Text editor__ > __Open__  > Go to workshop directory and find *example_a.py*
+  * In __Text editor__ ‣  __Open__  ‣  Go to workshop directory and find *example_a.py*
   * Click on __run script__
 * Procedure for  __Python Console__
   * type the following lines in the console. Note that you need to type in the workshop path in you computer in the first line.
@@ -827,16 +827,14 @@ The solution is using blender's native module __modal operator__. Modal operator
 |:---:|
 
 
-__example 1.__
+__Example 1.__
 
-```‣ Procedure ```
+`‣ Procedure `
 
 * Open the file *modal_example.blend*
 * Run the script that is loaded in the text editor
 * Select the Monkey object and move it around. You will see that as you are moving the object, three operations are running simultaneously: 1) the RGB values change, 2) a text object changes to show the updated RGB values, 3) and the timer text object changes to show the elapsed time in seconds.
 * Cancel the modal mode using "Esc" key.
-
-__Modal timer__ module looks like the following.
 
 -----
 <img src="img/coupling_scheme.jpg" height="280" > <img src="img/anim_viewshed.gif" height="280" >
@@ -844,15 +842,15 @@ __Modal timer__ module looks like the following.
 __II. Coupling example__
 
 In this example we are using modal timer to monitor a system directory,
-In the folder provided there are two folders "Watch" and "Scratch". The scratch folder contains 45 shape files and 45 images. The shapefiles represent viewpoints across a path, and textures represent viewsheds simulated from those locations. Viewsheds are combined with landcover to show the typology of visible. Through a python script we setup modal timer to constantly look for files to import and process. To emulate the geospatial simulation we setup a second modal timer that copies the geospatial data from the Scratch folder to  Watch folder. The python script therefore is consisted of the following components
+In the *workshop_materials* folder you can see two folders named "Watch" and "scratch". The scratch folder contains 45 shape files and 45 images. The shapefiles represent viewpoints across a path, and textures represent viewsheds simulated from those locations. Viewsheds are combined with landcover to show the typology of visible. Through a python script we setup modal timer to constantly look for files to import and process. To emulate the geospatial simulation we setup a second modal timer that copies the geospatial data from the Scratch folder to  Watch folder. The python script therefore is consisted of the following python classes
 
-__1. adapt__ class Processes the incoming files and scene objects
+__1. adapt__ class processes the incoming files and scene objects
 __2. Modal timer__ Looks into the __Watch__ directory, detects the type of incoming file, sends them to adapt class and finally removes the file from the watch folder.  
 __3. Modal_copy__ acts as a surrogate for your GIS software and copies texture and Point shape files from Scratch folder to the Watch folder to simulate the condition where your GIS application is automatically sending files over the network or locally.
 
-```‣ Procedure ```
+`‣ Procedure `
 
-* Go to file > preferences > addons > BlenderGIS > import/Export panel
+* Go to file ‣  preferences ‣  addons ‣  BlenderGIS ‣  import/Export panel
 * Unselect __Adjust 3D view__ and __Forced Textured solid shading__
 * Now run the script loaded into the __text editor__
 * The scripts adds a new panel in 3D view's toolbar (left side) with two buttons, __Watch mode__ and __Copy files__
@@ -1008,33 +1006,44 @@ class Modal_copy(bpy.types.Operator):
 ```
 
 
-
-
 ### Part 4. Publish your work online using Blender4web (Isosurfaces)
 
-Blender4web
+[Blender4web](https://www.blend4web.com/en/)
 
-Blender4web is a powerfull tool for publishing and sharing your data online.
- It also alows you to design sophisticated in material. develop  Blend4Web eliminates barriers to the complex, low-level technology of WebGL, making it accessible even to non-coders.
+Blender4web is a powerful tool for easy publishing and sharing your data online, inside blender. Specially for non-coders, the addon is a convenient tool to create sophisticated interactive models. To take a peek of the Blender4web functionalities, look at the following applications featured in Blender4web examples library.<br>
+[Everest](https://www.blend4web.com/en/demo/everest_panorama/) <br>
+[Low poly rendering](https://www.blend4web.com/en/demo/environment_animation/) <br>
 
- Take a look at some of the sample application,
 
-__Example 2.__
+<img src="img/isosurfaces.JPG">
+___________________
 
+__Example . Isosurfaces__
+
+In this example we use Blender4web addon to publish a 3D model of an Isosurface.
+The sample data is borrowed from a project focused on visualizing spatio-temporal patterns of pedestrian behavior using data gathered from public webcams. The shape of an isosurface (created in paraview) shows the spatio-temporal evolution of pedestrian density. The time axis is represented as a color ramp draped over the isosurface.
+
+`‣ Procedure `
+
+* From the *workshop_materials* directory locate and open *isosurface.blend*
 * To setup __Blender4web__ addon
-  * Go to __File__ > __Preferences__ > __addons__ > __install from file__
+  * Go to __File__ ‣  __Preferences__ ‣ __addons__ ‣  __install from file__
+  * From the *workshop_materials* directory locate and select *blend4web_addon_17_06.zip*
+  * Make sure that the addon is setup and selected
+  * Click __save user settings__ and close the preferences window
 
 
-We analyzed scenes of plazas in several cities revealing different spatio-temporal patterns. One of the studied plazas
-was analyzed before and after it has been redesigned, allowing us to directly study the effect of changes to the built
-environment on pedestrian behavior. We interactively visualized the spatio-temporal patterns of pedestrian densities
-using isosurfaces for given densities of interest. The shape of an isosurface shows the spatio-temporal evolution of
+* To export the blender scene as *.html* using GUI
+  * Go to __File__ ‣  __Export__ ‣ __Blender4web(.html)__
+  * Name your file and click on __B4W Export HTML__ button
+  * Double click on the html file to open it in the browser
 
-ICC 2017: Proceedings of the 2017 International Cartographic Conference, Washington D.C. 2
-pedestrian density. A time axis is represented as a color ramp draped over the isosurface, facilitating an understand -
-ing of the relationship between the time and shape of the isosurface (Fig. 1).
+* To export the blender scene as *.html* using editor
+  * run the script in the __text editor__
+
+  ![Blender Viewport](img/anim_isosurface.gif) <br> Blender4web interface|
+  |:---:|
 
 ------------
-
 ### Acknowledgment
 This work is built upon great contributions and support of [Blender](https://www.blender.org/) team, Blender GIS addon developers [(domlysz/BlenderGIS)](https://github.com/domlysz/BlenderGIS) , Center for [Geospatial Analytics](https://cnr.ncsu.edu/geospatial/), NC State's [Geoforall lab](https://geospatial.ncsu.edu/osgeorel/) and [Garrett Millar](https://github.com/gcmillar).
