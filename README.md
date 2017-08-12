@@ -1121,7 +1121,8 @@ The sample data is borrowed from a project focused on visualizing spatio-tempora
   * Double click on the html file to open it in the browser
 
 * To export the blender scene as *.html* using editor
-  * run the script in the __text editor__
+  * run the script in the __text editor__ <br>
+
 
   ![Blender Viewport](img/anim_isosurface.gif) <br> Blender4web interface|
   |:---:|
