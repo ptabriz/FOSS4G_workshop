@@ -26,22 +26,20 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 [I. Setting up the scene](#i-setting-up-the-scene)<br>
 [II. Georeferencing the blender Scene](#ii-georeferencing-the-blender-scene)<br>
 [III. Importing digital surface model](#iii-importing-digital-surface-model)<br>
-[IV. Importing viewpoint shapefile](#iv-importing-viewpoint-shapefile)<br>
+[IV. Importing shapefile](#iv-importing-viewpoint-shapefile)<br>
 [V. Shading the scene](#v-shading-the-scene)<br>
 [VI. 3D modelling made easy: scripting procedure](#vi-modelling-made-easy)
 
-### Part 3. Real-time 3D modelling using modal timer
-[I. Intro to coupling in Blender](#importing-geospatial-data) <br>
-[II. Coupling example](#materials-and-texture)<br>
+### Part 3. Real-time 3D modelling and interaction
+[I. Realtime modelling and interaction with Modal Timer](#i-realtime- modelling-and-interaction-with-Modal-Timer) <br>
+[II. Geospatial Coupling ](#ii-geospatial-coupling)<br>
 
 ### Part 4. Publish your work online using Blender4web
 [I. Setting up the Blender4web addon](#georeferencing-the-blender-scene)<br>
-[II. Publishing the model using Blender4web](#georeferencing-the-blender-scene)<br>
+[II. Exporting as HTML](ii-generating-htlm)<br>
 ___________________
 
 
-
-___________________
 ## I. What is Blender and why using Blender?
 Blender is an open-source 3D modelling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modelling workflow. Moreover, using [Blender4web](https://www.blend4web.com/en/) or [sketchfab](https://sketchfab.com/exporters/blender) addons, you can would be able to publish your geospatial models online, so that everyone can interactively explore or download your work. <br>
 
@@ -50,8 +48,6 @@ Blender is an open-source 3D modelling, rendering and game engine software. You 
 
 
 ## II. Basic components of the Blender interface
-
-
 
 Blender has numerous components and features that, thanks to it open-source capabilities, are growing every day. Covering all aspects of the software itself require several lessons. The purpose of this section is to provide a brief introduction to Blender's graphical user interface and some of its features that are essential for working with geospatial data, and will be used throughout this tutorial. We will specifically introduce the following components: __Areas, Editors, Tabs, Headers, Panels__
 
@@ -818,10 +814,9 @@ for area in bpy.context.screen.areas:
 ### Part 3. Real-time 3D modelling using modal timer
 [I. Modal timer operator](#importing-geospatial-data) <br>
 
-In this step we learn the basics to setup a monitoring system inside blender that can be setup to continuously watch for incoming commands or files. These data can be transferred through network using a system directory or through sockets. One important note is that Blender is not compatible with typical monitoring libraries like Watchmode or Threading. The following is Blender API's explanation for this.
-"Tools that lock Blender in a loop and redraw are highly discouraged since they conflict with Blenders ability to run multiple operators at once and update different parts of the interface as the tool runs."
+In this step we learn the basics to setup a monitoring system inside blender to continuously listen for incoming commands (e.g, through sockets), files (e.g, shape file, raster files, etc.), or user interaction (e.g, mouse, joystick, keyboard). In Blender this procedure is handeled throug a mudule called __Modal Operator__. One important note is using typical monitoring libraries like Watchmode or Threading is highly discouraged in Blender since because they interfere with Blenders ability to run multiple operators at once and update different parts of the interface as the tool runs.
 
-The solution is using blender's native module __modal operator__. Modal operators execute on user input or setup their own timers to run frequently, they can handle the events or pass through to be handled by the keymap or other modal operators. Other than the coupling, __Modal timer__ is especially useful for interactive tools. We will now learn the software functionality through the following example.
+__Modal operators__ execute on user input or setup their own timers to run frequently, they can handle the events or pass through to be handled by the keymap or other modal operators. Lets take a peek at the module's functionality in the following example.
 
 |![Blender Viewport](img/modal_test.gif) Modal timer example|
 |:---:|
