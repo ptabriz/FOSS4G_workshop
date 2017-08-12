@@ -35,7 +35,7 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 
 ### Part 4. Publish your work online using Blender4web
 [I. Setting up the Blender4web addon](#i-setting-up-the-blender4web-addon)<br>
-[II. Exporting blender scene to web format](ii-exporting-blender-scene-to-web-format)<br>
+[II. Exporting blender scene to web format](#ii-exporting-blender-scene-to-web-format)<br>
 ___________________
 
 ## I. What is Blender and why using Blender?
