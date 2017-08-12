@@ -4,7 +4,7 @@
 
 # Real-time 3D visualization of geospatial data with Blender
 
-This is material for the FOSS4GNA 2017 workshop held at Harvard CGA, in Boston, MA, August , 2017.
+This is material for the FOSS4GNA 2017 workshop held in Boston, MA in August 14, 2017.
 
 Prepared by : [Payam Tabrizian](https://github.com/ptabriz) <br>
 Presented with: [Anna Petrasova](https://github.com/petrasovaa/), [Vaclav Petras](https://github.com/wenzeslaus), and [Helena Mitasova](https://github.com/hmitaso?tab=stars)<br>
