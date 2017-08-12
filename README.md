@@ -917,7 +917,7 @@ if __name__ == "__main__":
 -----
 <img src="img/coupling_scheme.jpg" height="280" > <img src="img/anim_viewshed.gif" height="280" >
 
-__________________
+
 #### II. Coupling with GIS data
 
 In this example we are using modal timer to monitor a system directory,
@@ -1093,9 +1093,9 @@ Blender4web is a powerful tool for easy publishing and sharing your data online,
 [Everest](https://www.blend4web.com/en/demo/everest_panorama/) <br>
 [Low poly rendering](https://www.blend4web.com/en/demo/environment_animation/) <br>
 
-
-<img src="img/isosurfaces.JPG">
 ___________________
+<img src="img/Isosurfaces.JPG">
+
 
 __Example . Isosurfaces__
 
