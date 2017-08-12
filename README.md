@@ -35,7 +35,7 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 
 ### Part 4. Publish your work online using Blender4web
 [I. Setting up the Blender4web addon](#i-setting-up-the-blender4web-addon)<br>
-[II. Exporting blender scene as HTML file](ii-exporting-blender-scene-as-HTML-file)<br>
+[II. Exporting blender scene to web format](ii-exporting-blender-scene-to-web-format)<br>
 ___________________
 
 ## I. What is Blender and why using Blender?
@@ -1111,7 +1111,7 @@ The sample data is borrowed from a project focused on visualizing spatio-tempora
   * Make sure that the addon is setup and selected
   * Click __save user settings__ and close the preferences window
 
-#### II. Exporting blender scene as HTML
+#### II. Exporting blender scene to web format
 
 `‣ Procedure `
 * To export the blender scene as *.html* using GUI
