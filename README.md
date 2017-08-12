@@ -1,4 +1,4 @@
-
+module
 
 <img src="img/FOSS4g_logo.png" height="100" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/Blender_logo.png" height="60">
 
@@ -13,7 +13,7 @@ Tested and reviewed by: [Garrett Millar](https://github.com/gcmillar)
 ___________________
 ## Prelude
 
-What if your geospatial data and simulations like flooding, fire-spread and viewshed comupations are converted on-the-fly into realistic, interactive and immersive 3D worlds, without the need to deal with overly complicated or proprietary 3D modelling software? In this hands-on workshop we will explore how to automate importing and processing of various types of geospatial data (e.g., rasters, vectors) using Blender, an open-source 3D modelling and game engine software. We will start with a brief and focused introduction into Blender graphical user interface (GUI), Python API, as well as the GIS and Virtual reality addons. Once we import our GIS data into Blender, we will go over the techniques (both with GUI and command line) to increase the realism of our 3D world through applying textures, shading, and lighting. To make our work reusable for different projects, we will automate all importing and processing workflows using Python. Finally, we will show how to publish it online to share it with the world.
+What if your geospatial data and simulations like flooding, fire-spread and viewshed computations are converted on-the-fly into realistic, interactive and immersive 3D worlds, without the need to deal with overly complicated or proprietary 3D modeling software? In this hands-on workshop we will explore how to automate importing and processing of various types of geospatial data (e.g., rasters, vectors) using Blender, an open-source 3D modeling and game engine software. We will start with a brief and focused introduction into Blender graphical user interface (GUI), Python API, as well as the GIS and Virtual reality addons. Once we import our GIS data into Blender, we will go over the techniques (both with GUI and command line) to increase the realism of our 3D world through applying textures, shading, and lighting. To make our work reusable for different projects, we will automate all importing and processing workflows using Python. Finally, we will show how to publish it online to share it with the world.
 
 ## Contents
 
@@ -28,11 +28,11 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 [III. Importing digital surface model](#iii-importing-digital-surface-model)<br>
 [IV. Importing shapefile](#iv-importing-viewpoint-shapefile)<br>
 [V. Shading the scene](#v-shading-the-scene)<br>
-[VI. 3D modelling made easy: scripting procedure](#vi-modelling-made-easy)
+[VI. 3D modeling made easy: scripting procedure](#vi-modeling-made-easy)
 
-### Part 3. Real-time 3D modelling and interaction
-[I. Realtime modelling and interaction with Modal Timer](#i-realtime- modelling-and-interaction-with-Modal-Timer) <br>
-[II. Geospatial Coupling ](#ii-geospatial-coupling)<br>
+### Part 3. Real-time 3D modeling and interaction
+[I. Realtime modeling and interaction with Modal Timer](#i-realtime- modeling-and-interaction-with-Modal-Timer) <br>
+[II. Coupling with GIS data](#ii-coupling-with-gis-data)<br>
 
 ### Part 4. Publish your work online using Blender4web
 [I. Setting up the Blender4web addon](#georeferencing-the-blender-scene)<br>
@@ -41,7 +41,7 @@ ___________________
 
 
 ## I. What is Blender and why using Blender?
-Blender is an open-source 3D modelling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modelling workflow. Moreover, using [Blender4web](https://www.blend4web.com/en/) or [sketchfab](https://sketchfab.com/exporters/blender) addons, you can would be able to publish your geospatial models online, so that everyone can interactively explore or download your work. <br>
+Blender is an open-source 3D modeling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modeling workflow. Moreover, using [Blender4web](https://www.blend4web.com/en/) or [sketchfab](https://sketchfab.com/exporters/blender) addons, you can would be able to publish your geospatial models online, so that everyone can interactively explore or download your work. <br>
 
 [Learn more about Sketchfab]()<br>
 [A sample geospatial model in Sketchfab](https://sketchfab.com/models/298dfaf54e4447459275493e7b2adf96)<br>
@@ -100,7 +100,7 @@ As its name suggests, outliner lists and organizes the scene objects. From there
 <img src="img/outliner.JPG" height="300"> <br>
 ___________________
 ### Python console
-The Python console is a very useful editor for testing and executing short commands, which can then integrated in larger workflows. The Blender modelling and gaming modules are already loaded in python console so you can you can test your code snippets without extra effort of calling the modules.
+The Python console is a very useful editor for testing and executing short commands, which can then integrated in larger workflows. The Blender modeling and gaming modules are already loaded in python console so you can you can test your code snippets without extra effort of calling the modules.
 
 ![Blender Viewport](img/python_console.png) <br> Python console (retrieved from Blender manual)|
 |:---:|
@@ -136,7 +136,7 @@ bpy.ops.mesh.primitive_cube_add(radius=2, location = (0,0,0))
 ___________________
 ### Text Editor
 Text editor allows you to edit your python script and run it inside Blender.
-By pressing the __+__ icon you can start a new file and click on __Run Script__ to execute your code. You need to call modelling and gaming modules in text editor.
+By pressing the __+__ icon you can start a new file and click on __Run Script__ to execute your code. You need to call modeling and gaming modules in text editor.
 
 ![Blender Viewport](img/text_editor.png) <br> Text Editor|
 |:---:|
@@ -634,7 +634,7 @@ for obj in bpy.data.objects:
 |![Blender Viewport](img/finale.JPG) <br> Viewport render of the viewshed |
 |:---:|
 
-### VI. Modelling made easy
+### VI. modeling made easy
 
 
 Now lets try to run the entire procedure with a python file using __Text editor__ and __Python console__  
@@ -811,18 +811,27 @@ for area in bpy.context.screen.areas:
                   space.viewport_shade = 'MATERIAL'
 
 ```
-### Part 3. Real-time 3D modelling using modal timer
-[I. Modal timer operator](#importing-geospatial-data) <br>
+## Part 3. Real-time 3D modeling using modal timer
 
-In this step we learn the basics to setup a monitoring system inside blender to continuously listen for incoming commands (e.g, through sockets), files (e.g, shape file, raster files, etc.), or user interaction (e.g, mouse, joystick, keyboard). In Blender this procedure is handeled throug a mudule called __Modal Operator__. One important note is using typical monitoring libraries like Watchmode or Threading is highly discouraged in Blender since because they interfere with Blenders ability to run multiple operators at once and update different parts of the interface as the tool runs.
+### I. Modal timer operator
 
-__Modal operators__ execute on user input or setup their own timers to run frequently, they can handle the events or pass through to be handled by the keymap or other modal operators. Lets take a peek at the module's functionality in the following example.
+
+In this section we learn the basics to setup simple coupling for automatic importing and processing of geospatial data. We do that by setting up a monitoring system inside blender that continuously looks for incoming commands (e.g, through sockets), files (e.g, shape file, raster files, etc.), or user interaction (e.g, mouse, joystick, keyboard). In Blender this procedure is handled through a module called __Modal Timer Operator__.
+The reason that we focus on this specific module is that routine monitoring libraries like Watchmode or Threading are not well handled in Blender and often results in crashes. These modules interfere with blender's ability to run multiple operators at once and update different parts of the interface as the tool runs.
+
+The data can be transferred locally or over network, using simple file copy or more advanced methods like sockets. As an example, the following video shows a real-time coupling with GRASS GIS. GrassGIS itself is paired with Kinect to scan the elevation and color changes in the physical model. As user interacts with the physical model, GRASS GIS runs various simulations, and exports them as raster and shape formats to a system directory. In Blender __Modal timer__ is continuously monitoring the directory to update the model based on incoming data types. Those include terrain surface (Geotiff), ponding simulation (3Dpolygon), landcover patches (3D polygon), camera location (3Dpolyline), trail (3Dpolyline).
+
+<img src="https://www.youtube.com/watch?v=akCTeknStmQ">
+
+
+__________________
 
 |![Blender Viewport](img/modal_test.gif) Modal timer example|
 |:---:|
 
-
 __Example 1.__
+
+Lets take a peek at the module's components and functionality in the following example.
 
 `‣ Procedure `
 
@@ -831,13 +840,86 @@ __Example 1.__
 * Select the Monkey object and move it around. You will see that as you are moving the object, three operations are running simultaneously: 1) the RGB values change, 2) a text object changes to show the updated RGB values, 3) and the timer text object changes to show the elapsed time in seconds.
 * Cancel the modal mode using "Esc" key.
 
+* Take a quick look at the commented code to check the modules components and their functionality
 
-* Lets take a quick look at the modal
+```python
+import bpy
 
+class ModalTimerOperator(bpy.types.Operator):
+    """Operator which runs its self from a timer"""
+    bl_idname = "wm.modal_timer_operator"
+    bl_label = "Modal Timer Operator"
+
+    _timer = None
+
+    def modal(self, context, event):
+
+        # Terminate module when ESC key is pressed
+        if event.type in {'ESC'}:
+            self.cancel(context)
+            return {'CANCELLED'}
+
+        # assign timer condition to event handler
+        if event.type == 'TIMER':
+
+            # get the suzanne object's location #
+            loc = bpy.data.objects ["Suzanne"].location
+            # set the diffuse shader r,g,b to suzanne's x,y,z#
+            self.a[0] = abs(loc[0]/5)
+            self.a[1] = abs(loc[1]/5)
+            self.a[2] = abs(loc[2]/5)
+            print (self._timer.time_duration)
+
+            #update the RGB text and location#
+            colText = "RGB = {0}, {1}, {2}".format(str(round(self.a[0],2)),
+                            str(round(self.a[1],2)),str(round(self.a[2],2)))                        
+            self.rgb.data.body = colText
+            self.rgb.location = (loc[0]+1,loc[1]-.5,loc[2]-1)
+
+            #update the timer text and location#
+            self.timer_text.location = (loc[0]+1,loc[1]+.5,loc[2]-1)
+            self.timer_text.data.body = "Timer = " + str(round(self._timer.time_duration))
+
+        return {'PASS_THROUGH'}
+
+    def execute(self, context):
+        wm = context.window_manager
+        self._timer = wm.event_timer_add(1, context.window)
+        wm.modal_handler_add(self)
+
+        self.timer_text = bpy.data.objects ["Timer"]
+        self.rgb = bpy.data.objects ["RGB"]
+        # get the active object material #
+        mat = bpy.data.materials.get("Material")
+        # Get diffuse shader nodes's color #
+        node_tree = mat.node_tree
+        self.a = node_tree.nodes["Diffuse BSDF"].inputs[0].default_value
+
+        return {'RUNNING_MODAL'}
+
+    def cancel(self, context):
+        wm = context.window_manager
+        wm.event_timer_remove(self._timer)
+
+
+def register():
+    bpy.utils.register_class(ModalTimerOperator)
+
+
+def unregister():
+    bpy.utils.unregister_class(ModalTimerOperator)
+
+
+if __name__ == "__main__":
+    register()
+
+    # test call
+    bpy.ops.wm.modal_timer_operator()
+  ```
 -----
 <img src="img/coupling_scheme.jpg" height="280" > <img src="img/anim_viewshed.gif" height="280" >
 
-__II. Coupling example__
+__II. Loose coupling with GIS__
 
 In this example we are using modal timer to monitor a system directory,
 In the *workshop_materials* folder you can see two folders named "Watch" and "scratch". The scratch folder contains 45 shape files and 45 images. The shapefiles represent viewpoints across a path, and textures represent viewsheds simulated from those locations. Viewsheds are combined with landcover to show the typology of visible. Through a python script we setup modal timer to constantly look for files to import and process. To emulate the geospatial simulation we setup a second modal timer that copies the geospatial data from the Scratch folder to  Watch folder. The python script therefore is consisted of the following python classes
