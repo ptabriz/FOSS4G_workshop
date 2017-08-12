@@ -30,15 +30,14 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 [V. Shading the scene](#v-shading-the-scene)<br>
 [VI. 3D modeling made easy: scripting procedure](#vi-modeling-made-easy)
 
-### Part 3. Real-time 3D modeling and interaction
-[I. Realtime modeling and interaction with Modal Timer](#i-realtime- modeling-and-interaction-with-Modal-Timer) <br>
+### Part 3. Real-time 3D modeling and coupling
+[I. Intro to coupling with Modal Timer](#i-intro-to-coupling-with-modal-timer) <br>
 [II. Coupling with GIS data](#ii-coupling-with-gis-data)<br>
 
 ### Part 4. Publish your work online using Blender4web
-[I. Setting up the Blender4web addon](#georeferencing-the-blender-scene)<br>
-[II. Exporting as HTML](ii-generating-htlm)<br>
+[I. Setting up the Blender4web addon](#i-setting-up-the-Blender4web-addon)<br>
+[II. Exporting blender scene as HTML](ii-exporting-blender-scene-as-HTML)<br>
 ___________________
-
 
 ## I. What is Blender and why using Blender?
 Blender is an open-source 3D modeling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modeling workflow. Moreover, using [Blender4web](https://www.blend4web.com/en/) or [sketchfab](https://sketchfab.com/exporters/blender) addons, you can would be able to publish your geospatial models online, so that everyone can interactively explore or download your work. <br>
@@ -811,10 +810,9 @@ for area in bpy.context.screen.areas:
                   space.viewport_shade = 'MATERIAL'
 
 ```
-## Part 3. Real-time 3D modeling using modal timer
+### Part 3. Real-time 3D modeling and coupling
 
-### I. Modal timer operator
-
+#### I. Intro to coupling with Modal Timer
 
 In this section we learn the basics to setup simple coupling for automatic importing and processing of geospatial data. We do that by setting up a monitoring system inside blender that continuously looks for incoming commands (e.g, through sockets), files (e.g, shape file, raster files, etc.), or user interaction (e.g, mouse, joystick, keyboard). In Blender this procedure is handled through a module called __Modal Timer Operator__.
 The reason that we focus on this specific module is that routine monitoring libraries like Watchmode or Threading are not well handled in Blender and often results in crashes. These modules interfere with blender's ability to run multiple operators at once and update different parts of the interface as the tool runs.
@@ -919,7 +917,8 @@ if __name__ == "__main__":
 -----
 <img src="img/coupling_scheme.jpg" height="280" > <img src="img/anim_viewshed.gif" height="280" >
 
-__II. Loose coupling with GIS__
+__________________
+#### II. Coupling with GIS data
 
 In this example we are using modal timer to monitor a system directory,
 In the *workshop_materials* folder you can see two folders named "Watch" and "scratch". The scratch folder contains 45 shape files and 45 images. The shapefiles represent viewpoints across a path, and textures represent viewsheds simulated from those locations. Viewsheds are combined with landcover to show the typology of visible. Through a python script we setup modal timer to constantly look for files to import and process. To emulate the geospatial simulation we setup a second modal timer that copies the geospatial data from the Scratch folder to  Watch folder. The python script therefore is consisted of the following python classes
@@ -1086,7 +1085,7 @@ class Modal_copy(bpy.types.Operator):
 ```
 
 
-### Part 4. Publish your work online using Blender4web (Isosurfaces)
+### Part 4. Publish your work online using Blender4web
 
 [Blender4web](https://www.blend4web.com/en/)
 
@@ -1100,11 +1099,12 @@ ___________________
 
 __Example . Isosurfaces__
 
-In this example we use Blender4web addon to publish a 3D model of an Isosurface.
-The sample data is borrowed from a project focused on visualizing spatio-temporal patterns of pedestrian behavior using data gathered from public webcams. The shape of an isosurface (created in paraview) shows the spatio-temporal evolution of pedestrian density. The time axis is represented as a color ramp draped over the isosurface.
+In this example we use Blender4web addon to export a 3D model online.
+The sample data is borrowed from a project focused on visualizing spatio-temporal patterns of pedestrian behavior using data gathered from public webcams. The data is visualized using an Isosurface created in Paraview. The shape of an isosurface shows the spatio-temporal evolution of pedestrian density. The time axis is represented as a color ramp draped over the isosurface.
+
+#### I. Setting up the Blender4web addon
 
 `‣ Procedure `
-
 * From the *workshop_materials* directory locate and open *isosurface.blend*
 * To setup __Blender4web__ addon
   * Go to __File__ ‣  __Preferences__ ‣ __addons__ ‣  __install from file__
@@ -1112,7 +1112,9 @@ The sample data is borrowed from a project focused on visualizing spatio-tempora
   * Make sure that the addon is setup and selected
   * Click __save user settings__ and close the preferences window
 
+#### II. Exporting blender scene as HTML
 
+`‣ Procedure `
 * To export the blender scene as *.html* using GUI
   * Go to __File__ ‣  __Export__ ‣ __Blender4web(.html)__
   * Name your file and click on __B4W Export HTML__ button
