@@ -826,10 +826,13 @@ __Example 1.__
 
 `‣ Procedure `
 
-* Open the file *modal_example.blend*
+* Open the file *Modal.blend*
 * Run the script that is loaded in the text editor
 * Select the Monkey object and move it around. You will see that as you are moving the object, three operations are running simultaneously: 1) the RGB values change, 2) a text object changes to show the updated RGB values, 3) and the timer text object changes to show the elapsed time in seconds.
 * Cancel the modal mode using "Esc" key.
+
+
+* Lets take a quick look at the modal
 
 -----
 <img src="img/coupling_scheme.jpg" height="280" > <img src="img/anim_viewshed.gif" height="280" >
