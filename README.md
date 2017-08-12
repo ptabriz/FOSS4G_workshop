@@ -2,7 +2,7 @@
 
 <br>
 
-# Real-time 3D visualization of geospatial data using Blender
+# Real-time 3D visualization of geospatial data with Blender
 
 This is material for the FOSS4GNA 2017 workshop held at Harvard CGA, in Boston, MA, August , 2017.
 
@@ -34,8 +34,8 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 [II. Coupling with GIS data](#ii-coupling-with-gis-data)<br>
 
 ### Part 4. Publish your work online using Blender4web
-[I. Setting up the Blender4web addon](#i-setting-up-the-Blender4web-addon)<br>
-[II. Exporting blender scene as HTML](ii-exporting-blender-scene-as-HTML)<br>
+[I. Setting up the Blender4web addon](#i-setting-up-the-blender4web-addon)<br>
+[II. Exporting blender scene as HTML file](ii-exporting-blender-scene-as-HTML-file)<br>
 ___________________
 
 ## I. What is Blender and why using Blender?
