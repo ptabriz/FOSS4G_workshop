@@ -45,8 +45,7 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 |**Part2**   | 10:00-11:00  |
 |**Part3**   | 11:00-11:30  |
 |**Part3**   | 11:30-12:00  |
-\
---
+
 ___________________
 
 ## I. What is Blender and why using Blender?
