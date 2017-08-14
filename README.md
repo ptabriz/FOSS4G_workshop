@@ -36,10 +36,21 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 ### Part 4. Publish your work online using Blender4web
 [I. Setting up the Blender4web addon](#i-setting-up-the-blender4web-addon)<br>
 [II. Exporting blender scene to web format](#ii-exporting-blender-scene-to-web-format)<br>
+
+
+|Section| Duration|
+|------| ------------- :|
+|**Part1**  |8:00- 9:45 |
+|**Break**  |15 min|
+|**Part2**   | 10:00-11:00  |
+|**Part3**   | 11:00-11:30  |
+|**Part3**   | 11:30-12:00  |
+\
+--
 ___________________
 
 ## I. What is Blender and why using Blender?
-Blender is an open-source 3D modeling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modeling workflow. Moreover, using [Blender4web](https://www.blend4web.com/en/) or [sketchfab](https://sketchfab.com/exporters/blender) addons, you can would be able to publish your geospatial models online, so that everyone can interactively explore or download your work. <br>
+Blender is an open-source 3D modeling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modeling workflow. Moreover, using [Blender4web](https://www.blend4web.com/en/) or [sketchfab](https://sketchfab.com/exporters/blender) addons, you would be able to publish your geospatial models online, so that everyone can interactively explore or download your work. <br>
 
 [Learn more about Sketchfab]()<br>
 [A sample geospatial model in Sketchfab](https://sketchfab.com/models/298dfaf54e4447459275493e7b2adf96)<br>
@@ -49,14 +60,14 @@ Blender is an open-source 3D modeling, rendering and game engine software. You c
 
 Blender has numerous components and features that, thanks to it open-source capabilities, are growing every day. Covering all aspects of the software itself require several lessons. The purpose of this section is to provide a brief introduction to Blender's graphical user interface and some of its features that are essential for working with geospatial data, and will be used throughout this tutorial. We will specifically introduce the following components: __Areas, Editors, Tabs, Headers, Panels__
 
-* Browse the workshop data folder, locate and open *interface_introduction.blend*
+* Browse the *workshop materials* folder, locate and open *interface_introduction.blend*
 
 |![Blender Viewport](img/Blender_interface.JPG)Blender interface|
 |:---:|
 
 Blender's application window can be flexibly arranged and divided up into a number of __Areas__. An area contains the workspace for a particular type of editor, like a *3D View Editor*, or an *Outliner*.  In figure above you can see the application window is divided into five areas, each assigned to an editor.  
 
-__Editors__ are responsible for displaying and modifying different aspects of data. Imagine editors as full-fledge software specialized for a specific tasks, like changing data properties, image editing, video editing, animation design, game design, and etc. You can assign an area to a specific editor using __Editor Type selector__ , the first button at the left side of a header (figure below, left). Every area in Blender may contain any type of editor and it is also possible to open the same type multiple times.
+__Editors__ are responsible for displaying and modifying different aspects of data. Imagine editors as full-fledge software each specialized for a specific tasks, like changing data properties, image editing, video editing, animation design, game design, and etc. You can assign an area to a specific editor using __Editor Type selector__ , the first button at the left side of a header (figure below, left). Every area in Blender may contain any type of editor and it is also possible to open the same type multiple times.
 
 __Tabs__ are overlapping sections in the user-interface. Tabs can be vertical (Tool Shelf) or horizontal (Properties Editor, User Preferences).
 
@@ -68,7 +79,7 @@ Finally, the smallest organizational unit in the user interface is a __Panel__. 
 __Below:__ A Header with tabs
 
 ### III. Editors
-Now that you have some general ideas about the interface, in following we will review some of the commonly used editors.
+Now that you have some general ideas about the interface, we will review some of the commonly used editors.
 
 ### 3D view
 The __3D View__ is the visual interface with the 3D data and scene with numerous functionalities for modeling, animation, texture painting, etc. Unlike the 2D environment of GIS software, where you can only navigate in x and y directions, 3D viewport allows full control over our viewing angle, depth, size, etc. You can press and hold down mouse scroll (or middle click) button to change the viewing angle (or orbiting around), shift and drag to pan, and roll to zoom back and forth.
@@ -78,27 +89,27 @@ Now note the panel on the left side of the region which is called __Tool shelf__
 |![Blender Viewport](img/editors_3dview_header.png) 3D view header (retrieved from Blender manual)|
 |:---:|
 
-Header's __View menu__ allow you to select a specific viewpoint such as top, left or different perspectives. Also notice that each of these commands have a keyboard shortcut associated with them. For example you can push `numpad 3` (if you have a full keyboard) to switch to top view.
+Header's __View menu__ allows you to select a specific viewpoint such as top, left or different perspectives. Each of these commands have a keyboard shortcut ,for example you can press `numpad 3` (if you have a full keyboard) to switch to top view.
 
 __Add menu__ provides a list of different types of 2D and 3D object that can be added to a scene
 
-__Interaction mode__ allows you to toggle between the __Object mode__ and __Edit mode__. Edit mode allows you to access more low-level structures of your object, like faces, and vertices. In the examples that we complete in this tutorial, we will use some of these options to refine the surface model. It is important to get familiar with the 3 core elements, __Faces__, __Edges__ and __Vertex__. You can select these elements by clicking on their corresponding icons.
+In __Object Interaction mode__ you can different aspect of data. In this tutorial we focus __Object mode__ and __Edit mode__. __Edit mode__ allows you to access more low-level structures of your object, like faces, and vertices. In the examples that we complete in this tutorial, we will use some of these options to refine the surface model. It is important to get familiar with the 3 core elements, __Faces__, __Edges__ and __Vertex__. You can select these elements by clicking on their corresponding icons.
 
-On the right side of the interaction mode, is the viewport __Shading mode__ which you can use to choose the visualization and viewport rendering method. Default is the __Solid mode__ that shows objects with solid faces, but without textures and shading. The __Material mode__ shows the object with textures and is suitable for having an idea how 3D objects may look like with materials. The __Rendering mode__, enables real-time rendering, which computes the near-to-final product on-the-fly as you interact with the object.
+On the right side of the interaction mode, is the viewport __Shading mode__ which you can use to choose the visualization and viewport rendering methods. __Solid mode__ is the default mode and  shows objects with solid faces, but without textures and shading. The __Texture mode__ shows the object with textures. __Material mode__ is the fast approximation of the complete material including texture and shading. __Rendered mode__ enables real-time rendering, which computes the near-to-final product on-the-fly as you interact with the object (with accurate materials and lighting).
 
 #### Basic object selection and interaction
 
-__Objects__ are basically everything that you see in the 3D view. They include 3D objects, lights and cameras. You can select any object in the scene using the mouse right-click. Selected objects are highlighted in orange so you can easily distinguish them. Use the 3 axes (i.e., handles) to move the object in your preferred direction. To select multiple objects, press and hold `control` key and right click on objects to add to your selection. You can rotate objects by pressing `R` keyboard button, or scale objects using `S` key. Note that when you are transforming an object, a numeric output on the left bottom of the 3D viewport will give you more precise feedback on how much you moved, rotated or scaled an object. You can delete the object by selecting it, pressing `delete` key and selecting ok.
+__Objects__ are basically everything that you see in the 3D view. They include 3D objects, lights, cameras and more. You can select any object in the scene using the __right-click__. Selected objects are highlighted in orange. Use the 3 axes (i.e., handles) to move the object in your preferred direction. To select multiple objects, press and hold `control` key and right click on objects to add to your selection. To unselect hold `shift` and right-click on the object. You can move (grab) objects by pressing `G`, rotate them by pressing `R`, or scale them using `S` key. You can constrain any transformation to a specific axis by pressing `x`, `y`, `z`. You can delete the object by selecting it, pressing `delete` key and selecting ok.
 
 [Learn more about 3D view](https://docs.blender.org/manual/en/dev/editors/3dview/introduction.html#tool-shelf)
 ___________________
 ### Outliner
-As its name suggests, outliner lists and organizes the scene objects. From there you can set the hierarchy, visibility of the 3D objects or lock them if you need. You can also select and activate objects by clicking on their name in the list. Figure below shows **Outliner editor** that list three objects (Camera, Cube and Lamp). The Lamp object is selected.
+As its name suggests, outliner lists and organizes the scene objects. From there you can set the hierarchy, visibility of the 3D objects or lock them if you need. You can also select and activate objects by clicking on their name in the list. Figure below shows **Outliner editor** that list three objects (Camera, Cube and Lamp) and the Lamp object is selected.
 
 <img src="img/outliner.JPG" height="300"> <br>
 ___________________
 ### Python console
-The Python console is a very useful editor for testing and executing short commands, which can then integrated in larger workflows. The Blender modeling and gaming modules are already loaded in python console so you can you can test your code snippets without extra effort of calling the modules.
+The Python console is a useful editor for testing and executing short commands, which then can be integrated in larger workflows. The Blender modeling and gaming modules are already loaded in python console so you can you can test your code snippets without extra effort of calling the modules.
 
 ![Blender Viewport](img/python_console.png) <br> Python console (retrieved from Blender manual)|
 |:---:|
@@ -108,8 +119,9 @@ __`Example 1.`__ Simple object operation using python console.
 * Call *Cube* object and print its location  
   * Copy and paste the individual command lines in the console and press enter  
 
+
 ```python
-cubeObj = bpy.data.objects[“Cube”]
+cubeObj = bpy.data.objects['Cube']
 print (cubeObj.location)
 ```
 * Move cube object to location *x = 0 , y = 2 , z = 3*
@@ -122,15 +134,12 @@ cubeObj.location [0] += 5
 ```
 * Select and delete cube object
 ``` python
+## Unselect everything in the scene
+bpy.ops.object.select_all(action='DESELECT')
 cubeObj.select = True
 bpy.ops.object.delete()
 ```
 
-* Adding a simple object (Blender's default Monkey object) with radius 2 ,and location (0,0,0)
-
-``` python
-bpy.ops.mesh.primitive_cube_add(radius=2, location = (0,0,0))
-```
 ___________________
 ### Text Editor
 Text editor allows you to edit your python script and run it inside Blender.
@@ -158,17 +167,21 @@ for x in range(20):
 |:---:|:---:|
 
 * Delete all cube objects, add a *Monkey* object, and add a *Plane* object
-  * Open a new text window or delete the contents of existing ones
+  * Open a new text window or delete the contents of existing ones (select content with `ctrl + A` and press `del`)
 
 ``` python
 import bpy
 
+# unselect object
+bpy.ops.object.select_all(action='DESELECT')
+## delete all object that have cube in their name ##
 for object in bpy.data.objects:
     if "Cube" in object.name:
         object.select = True
         bpy.ops.object.delete()     
-
+## add monkey object
 bpy.ops.mesh.primitive_monkey_add(location=(0, 0, 0), radius = 3)
+## add plane object
 bpy.ops.mesh.primitive_plane_add(location=(0, 0, -3), radius = 10)
 ```
 
@@ -196,7 +209,8 @@ __`Example 3.`__ Basic object transformation using properties modifier
 __Materials__ tab allows you to assign or change an object’s material. You can add and remove material, or use material browser to assign previously created materials to the object. In this tutorial we briefly introduce two basic components of Materials, __Shaders__ and __Textures__.  
 
 **Shading** (or coloring) allows you to adjust the base color (as modified by the diffusion and specular reflection phenomenon) and the light intensity.
-You can also assign __Texture__ to the materials. You can either select from preset textures already available in scene, or load a new one from hard drive. Lets practice shading and texturing in the following example.
+You can also assign __Texture__ to the objects, which is called __Texture mapping__. Texture mapping is often used to add detail to surfaces by projecting images and patterns onto those surfaces.
+Through the following examples we practice simple shading and texture mapping.
 
 __`Example 4.`__ Assigning simple Shaders and Textures
 
@@ -213,7 +227,6 @@ __`Example 4.`__ Assigning simple Shaders and Textures
 
 ![Blender Viewport](img/Materials_1.jpg) __Left to right:__ Diffuse BSDF , Glass BSDF, Glossy BSDF, Emission
 
-
 * Textures
   * While the shader is still on “Glossy BSDF”, click on the radio button in front of the “Color” parameter. A widget with several columns will appear. From the texture column, select “Voronoi” to see how texture impact the rendering.
   * Now try “Gradient” texture. Your material preview and scene rendering should look like the left two columns in the figure below.
@@ -224,7 +237,7 @@ __Left to right__: Gradient texture, Voronoi texture, Glossy BSDF, Mix Shader
 
 ___________________
 ### Node Editor (material)
-In addition to creating materials as just described using all the settings on all the materials panels, in Blender you can create more sophisticated materials by routing basic materials through a set of nodes. Each node performs some operation on the material, changing how it will appear when applied to the mesh, and passes it on to the next node. In this way, very complex material appearances can be achieved.
+For creating more sophisticated materials you can use __Node editor__ . Node editor is a visual interface for viewing and creating an interconnected network of nodes. In this network, each individual node performs some operation on the material, changing how it will appear when applied to the mesh, and passes it on to the next node. In this way, very complex material appearances can be achieved.
 
 __`Example 5.`__ Setup a Mix Shader using node editor.
 In this example we mix a glossy shader with a diffuse shader to make a composite material.
@@ -233,13 +246,13 @@ In this example we mix a glossy shader with a diffuse shader to make a composite
 * Switch the python console editor (bottom left area) to __Node editor__ (figure below, left).
 * In the node editor You will see the nodes we have already setup. The Glossy node shader’s output is connected to the surface input of the Material output.  
 We will now add two other shaders, a diffuse shader, and a mix shader.
-* From the Noder Editor’s bottom Header ‣  __Add__ ‣  __Shader__ ‣  __Diffuse BSDF__
-* From the Noder Editor’s bottom Header ‣ __Add__ ‣  __Shader__ ‣  __Mix shader__. You should be able to see both nodes have been added in to your node editor.
+* From the Node Editor’s bottom Header ‣  __Add__ ‣  __Shader__ ‣  __Diffuse BSDF__
+* From the Node Editor’s bottom Header ‣ __Add__ ‣  __Shader__ ‣  __Mix shader__. You should be able to see both nodes have been added in to your node editor.
 * Change the color value of the Diffuse node to *R: 0.075 G: 0.35 B: 0.50*
 * Disconnect the __Glossy BSDF__ input from the surface
 * Connect BSDF output of both Diffuse and Glossy shaders to the inputs on the left side of the Mix (Shader)
 * Connect Shader output (on the right side) to the Surface input of the Material output nodes (figure below, right).
-* With the Fac parameter, you can adjust the mixture level.
+* With the __Fac__ parameter, you can adjust the mixture level.
 * Your material should look like the right column of the above figure
 [learn more about nodes](https://docs.blender.org/manual/de/dev/render/cycles/nodes/index.html)
 
@@ -279,13 +292,13 @@ There are two ways to complete the example; Scripting method (using blender's Py
 
 The first step is to clean the scene and setup rendering and lighting parameters.
 __`GUI`__
-* Run Blender and open the file "Example_A.blend".
+* Run Blender and open the file *Example_A.blend*.
 * Select the default __Cube__ object in 3D viewport and delete it (right-click on the object ‣  press delete ‣  ok )
-* Set __render engine__ to "Cycles". You can find it in the top header, the default is "Blender Render"
-* To increase the _Lamp_ elevation and change the Lamp type to "Sun" for appropriate lighting:
+* Make sure that the __render engine__ is set to "Cycles". You can find it in the top header, the default is *Blender Render*
+* To increase the Lamp elevation and change the Lamp type to __Sun__ for appropriate lighting:
     * Left click on the __Lamp__ object in __Outliner__ to select it
     * Go to __Properties editor__ ‣  __Object__ (the orange cube icon) ‣  __Transform__ panel ‣  in the __Location__ matrix, change the *Z* value to 1000 (see below figure if needed)
-* For geospatial models you need a more powerfull light source. To change lamp type to Sun and increase the emission:
+* For geospatial models you need a more powerful light source. To change lamp type to Sun and increase the emission:
     * In __Properties editor__ ‣  __Lamp__ (two icons to the right of the __Object__ icon) ‣  expand the __Lamp__ panel ‣  Change lamp type to *Sun*
     * Expand the __Nodes__ panel ‣  Click on __Use Nodes__ to enable modifying Sun parameters.
     * Set the __Strength__ parameter to 6.00
@@ -406,12 +419,12 @@ ___________________
 In this step we will import viewpoint locations as a point feature shapefile. With those features we can visualize the observer location from which the viewsheds are computed on the digital surface. BlenderGIS addon can import shape features respecting their attributes. In this example the "viewpoint.shp" has *Elevation* and *Name* attributes that we will use to assign hight and unique name to our viewshed points.
 
 __`GUI`__
-* Import viewpoint shape file
+* To Import viewpoint shape file:
    * Go to __file__ ‣  __import__ ‣  __Shapefile__
    * Browse workshop data directory, select *vpoints.shp* and click on __Import Shp__ . The shape import dialogue should appear in front of the GIS addon interface.
-   * Activate “Elevation from field” and in field panel select “height”
-   * Activate “Separate objects”
-   * Activate “Object name from field” and in field panel select “Name”, you should be able to see 4 the points on the surface and 4 objects added to the Outliner with the names *Viewshed_1, Viewshed_2,Viewshed_3, Viewshed_4*
+   * Activate __Elevation from field__ and in field panel select __height__
+   * Activate __Separate objects__
+   * Activate __Object name from field__ and in field panel select __Name__, you should be able to see 4 the points on the surface and 4 objects added to the Outliner with the names *Viewshed_1, Viewshed_2,Viewshed_3, Viewshed_4*
    * Select __OK__
 
 |![Blender Viewport](img/shape_import.JPG) <br> Blender Gis shape import dialogue|
@@ -423,7 +436,7 @@ import bpy
 import os
 filePath = os.path.dirname(bpy.path.abspath("//"))
 fileName = os.path.join(filePath,'vpoints.shp')
-bpy.ops.importgis.shapefile(filepath=fileName,fieldElevName="height",fieldObjName='Name',separateObjects=True,shpCRS='EPSG:3358')
+bpy.ops.importgis.shapefile(filepath=fileName, fieldElevName="height", fieldObjName='Name', separateObjects=True, shpCRS='EPSG:3358')
 ```
 
 #### Creating viewpoint markers
@@ -463,12 +476,12 @@ for obj in bpy.data.objects:
 
 #### Generating 4 copies of the surface and viewpoint spheres
 
-In this step we create 3 addtional copies of the surface model and move each of the viewpoint spheres to the  
+In this step we create 3 additional copies of the surface model and move each of the viewpoint spheres to the  
 corresponding surface.
 
 __`GUI`__
-* Select DSM object and press `ctrl+c` , `ctrl+v` to make a copy of the object , you should see the example1_dsm.001 in the outliner
-* Select the "example1_dsm001"
+* Select DSM object and press `ctrl+c` , `ctrl+v` to make a copy of the object , you should see the object *example1_dsm.001* in the outliner
+* Select object *example1_dsm001*
 * go to __Properties Editor__ ‣  __Object__ (cube icon)
 * In the __Transform__ panel ‣  __Delta Transform__ ‣  __X:__ type *750* to move the duplicated surface 750 meters to the east  
 * Create another copy of the DSM , put -750 for Y parameter to move the duplicate surface 750 meters to the south
@@ -813,7 +826,7 @@ for area in bpy.context.screen.areas:
 
 #### I. Intro to coupling with Modal Timer
 
-In this section we learn the basics to setup simple coupling for automatic importing and processing of geospatial data. We do that by setting up a monitoring system inside blender that continuously looks for incoming commands (e.g, through sockets), files (e.g, shape file, raster files, etc.), or user interaction (e.g, mouse, joystick, keyboard). In Blender this procedure is handled through a module called __Modal Timer Operator__.
+In this section we learn the basics to setup simple coupling for importing and processing of geospatial data, in realtime. We do that by setting up a monitoring system inside blender that continuously looks for incoming commands (e.g, through sockets), files (e.g, shape file, raster files, etc.), or user interaction (e.g, mouse, joystick, keyboard). In Blender this procedure is handled through a module called __Modal Timer Operator__.
 The reason that we focus on this specific module is that routine monitoring libraries like Watchmode or Threading are not well handled in Blender and often results in crashes. These modules interfere with blender's ability to run multiple operators at once and update different parts of the interface as the tool runs.
 
 The data can be transferred locally or over network, using simple file copy or more advanced methods like sockets. As an example, the following video shows a real-time coupling with GRASS GIS. GrassGIS itself is paired with Kinect to scan the elevation and color changes in the physical model. As user interacts with the physical model, GRASS GIS runs various simulations, and exports them as raster and shape formats to a system directory. In Blender __Modal timer__ is continuously monitoring the directory to update the model based on incoming data types. Those include terrain surface (Geotiff), ponding simulation (3Dpolygon), landcover patches (3D polygon), camera location (3Dpolyline), trail (3Dpolyline).
@@ -881,6 +894,7 @@ class ModalTimerOperator(bpy.types.Operator):
 
     def execute(self, context):
         wm = context.window_manager
+        # Per seconds timer steps
         self._timer = wm.event_timer_add(1, context.window)
         wm.modal_handler_add(self)
 
@@ -919,17 +933,26 @@ if __name__ == "__main__":
 
 #### II. Coupling with GIS data
 
-In this example we are using modal timer to monitor a system directory,
-In the *workshop_materials* folder you can see two folders named "Watch" and "scratch". The scratch folder contains 45 shape files and 45 images. The shapefiles represent viewpoints across a path, and textures represent viewsheds simulated from those locations. Viewsheds are combined with landcover to show the typology of visible. Through a python script we setup modal timer to constantly look for files to import and process. To emulate the geospatial simulation we setup a second modal timer that copies the geospatial data from the Scratch folder to  Watch folder. The python script therefore is consisted of the following python classes
 
-__1. adapt__ class processes the incoming files and scene objects
+In this example we are using modal timer to monitor a system directory,
+In the *workshop_materials* folder you can see two folders named "Watch" and "scratch". The scratch folder contains 45 shape files and 45 images. The shapefiles represent viewpoints across a path, and textures represent viewsheds simulated from those locations. Viewsheds are combined with landcover to show the landuse composition of visible surface. Through a python script we setup modal timer to constantly look for files to import and process. To emulate the geospatial simulation we setup a second modal timer that copies the geospatial data from the Scratch folder to  Watch folder (look at above scheme). The python script is consisted of the following python classes.
+
+* Locate and run *coupling_example.blend* in *workshop_materials*
+
+__1. adapt__ class processes the incoming files and scene objects. Specifically it performs the following operations.
+  * Imports the viewshed map
+  * Replaces the emission texture of the *DSM* object with the imported map
+  * Imports the viewpoint shape file
+  * Aligns the location of the viewshed marker (*Torus* object) with the location of the imported viewpoint.
+
 __2. Modal timer__ Looks into the __Watch__ directory, detects the type of incoming file, sends them to adapt class and finally removes the file from the watch folder.  
 __3. Modal_copy__ acts as a surrogate for your GIS software and copies texture and Point shape files from Scratch folder to the Watch folder to simulate the condition where your GIS application is automatically sending files over the network or locally.
+__4. Panel__ a small widget with buttons to run the modules (2 and 3)
 
 `‣ Procedure `
 
 * Go to file ‣  preferences ‣  addons ‣  BlenderGIS ‣  import/Export panel
-* Unselect __Adjust 3D view__ and __Forced Textured solid shading__
+* Unselect __Adjust 3D view__ and __Forced Textured solid shading__.
 * Now run the script loaded into the __text editor__
 * The scripts adds a new panel in 3D view's toolbar (left side) with two buttons, __Watch mode__ and __Copy files__
 * First Press __Watch mode__ and then press __Copy files__
