@@ -40,11 +40,11 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 
 |Section|Duration|
 |------ |-------:|
-|**Part1**  |8:00- 9:45 |
+|**Part 1**  |8:00- 9:45 |
 |**Break**  |15 min|
-|**Part2**   | 10:00-11:00  |
-|**Part3**   | 11:00-11:30  |
-|**Part3**   | 11:30-12:00  |
+|**Part 2**   | 10:00-11:00  |
+|**Part 3**   | 11:00-11:30  |
+|**Part 4**   | 11:30-12:00  |
 
 ___________________
 
