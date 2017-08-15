@@ -33,8 +33,8 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 [I. Intro to coupling with Modal Timer](#i-intro-to-coupling-with-modal-timer) <br>
 [II. Coupling with GIS data](#ii-coupling-with-gis-data)<br>
 
-### Part 4. Publish your work online using Blender4web
-[I. Setting up the Blender4web addon](#i-setting-up-the-blender4web-addon)<br>
+### Part 4. Publish your work online using Blend4Web
+[I. Setting up the Blend4Web addon](#i-setting-up-the-blend4web-addon)<br>
 [II. Exporting blender scene to web format](#ii-exporting-blender-scene-to-web-format)<br>
 
 
@@ -49,7 +49,7 @@ What if your geospatial data and simulations like flooding, fire-spread and view
 ___________________
 
 ## I. What is Blender and why using Blender?
-Blender is an open-source 3D modeling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modeling workflow. Moreover, using [Blender4web](https://www.blend4web.com/en/) or [sketchfab](https://sketchfab.com/exporters/blender) addons, you would be able to publish your geospatial models online, so that everyone can interactively explore or download your work. <br>
+Blender is an open-source 3D modeling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modeling workflow. Moreover, using [Blend4Web](https://www.blend4web.com/en/) or [sketchfab](https://sketchfab.com/exporters/blender) addons, you would be able to publish your geospatial models online, so that everyone can interactively explore or download your work. <br>
 
 [Learn more about Sketchfab]()<br>
 [A sample geospatial model in Sketchfab](https://sketchfab.com/models/298dfaf54e4447459275493e7b2adf96)<br>
@@ -1106,11 +1106,11 @@ class Modal_copy(bpy.types.Operator):
 ```
 
 
-### Part 4. Publish your work online using Blender4web
+### Part 4. Publish your work online using Blend4Web
 
-[Blender4web](https://www.blend4web.com/en/)
+[Blend4Web](https://www.blend4web.com/en/)
 
-Blender4web is a powerful tool for easy publishing and sharing your data online, inside blender. Specially for non-coders, the addon is a convenient tool to create sophisticated interactive models. To take a peek of the Blender4web functionalities, look at the following applications featured in Blender4web examples library.<br>
+Blend4Web is a powerful tool for easy publishing and sharing your data online, inside blender. Specially for non-coders, the addon is a convenient tool to create sophisticated interactive models. To take a peek of the Blend4Web functionalities, look at the following applications featured in Blend4Web examples library.<br>
 [Everest](https://www.blend4web.com/en/demo/everest_panorama/) <br>
 [Low poly rendering](https://www.blend4web.com/en/demo/environment_animation/) <br>
 
@@ -1120,14 +1120,14 @@ ___________________
 
 __Example . Isosurfaces__
 
-In this example we use Blender4web addon to export a 3D model online.
+In this example we use Blend4Web addon to export a 3D model online.
 The sample data is borrowed from a project focused on visualizing spatio-temporal patterns of pedestrian behavior using data gathered from public webcams. The data is visualized using an Isosurface created in Paraview. The shape of an isosurface shows the spatio-temporal evolution of pedestrian density. The time axis is represented as a color ramp draped over the isosurface.
 
-#### I. Setting up the Blender4web addon
+#### I. Setting up the Blend4Web addon
 
 `‣ Procedure `
 * From the *workshop_materials* directory locate and open *isosurface.blend*
-* To setup __Blender4web__ addon
+* To setup __Blend4Web__ addon
   * Go to __File__ ‣  __Preferences__ ‣ __addons__ ‣  __install from file__
   * From the *workshop_materials* directory locate and select *blend4web_addon_17_06.zip*
   * Make sure that the addon is setup and selected
@@ -1137,7 +1137,7 @@ The sample data is borrowed from a project focused on visualizing spatio-tempora
 
 `‣ Procedure `
 * To export the blender scene as *.html* using GUI
-  * Go to __File__ ‣  __Export__ ‣ __Blender4web(.html)__
+  * Go to __File__ ‣  __Export__ ‣ __Blend4Web(.html)__
   * Name your file and click on __B4W Export HTML__ button
   * Double click on the html file to open it in the browser
 
@@ -1145,7 +1145,7 @@ The sample data is borrowed from a project focused on visualizing spatio-tempora
   * run the script in the __text editor__ <br>
 
 
-  ![Blender Viewport](img/anim_isosurface.gif) <br> Blender4web interface|
+  ![Blender Viewport](img/anim_isosurface.gif) <br> Blend4Web interface|
   |:---:|
 
 ------------
